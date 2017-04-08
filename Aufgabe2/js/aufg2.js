@@ -9,7 +9,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 Die Aufgabe wurde in Zusammenarbeit mit Selina Mazzaro und Jacqueline Wagner erstellt.
 */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     var n = 64; //felder
     var x = 0; //gerade zahl: wei�, ungerade zahl: schwarz
     var a = 1; //Reis

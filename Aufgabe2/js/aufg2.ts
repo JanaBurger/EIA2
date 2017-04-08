@@ -10,7 +10,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 Die Aufgabe wurde in Zusammenarbeit mit Selina Mazzaro und Jacqueline Wagner erstellt.
 */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
 
     let n: number = 64; //felder
     let x: number = 0; //gerade zahl: weiﬂ, ungerade zahl: schwarz
