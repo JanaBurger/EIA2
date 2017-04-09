@@ -7,7 +7,9 @@ Datum: 9.4.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.*/
 
-/*Diese Aufgabe wurde in Zusammenarbeit mit Jacqueline und Selina erstellt*/
+/*Diese Aufgabe wurde in Zusammenarbeit mit Jacqueline und Selina erstellt
+wir kamen an einem Punkt leider nicht mehr weiter und hatten keine Idee mehr wie wir unsere Fehler lösen können.
+Es wäre gut wenn wir das im Praktikum nochmal ausführlich besprechen könnten.*/
 
 document.addEventListener("DOMContentLoaded", function(): void {
     

@@ -6,7 +6,9 @@ Datum: 9.4.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.*/
-/*Diese Aufgabe wurde in Zusammenarbeit mit Jacqueline und Selina erstellt*/
+/*Diese Aufgabe wurde in Zusammenarbeit mit Jacqueline und Selina erstellt
+wir kamen an einem Punkt leider nicht mehr weiter und hatten keine Idee mehr wie wir unsere Fehler l�sen k�nnen.
+Es w�re gut wenn wir das im Praktikum nochmal ausf�hrlich besprechen k�nnten.*/
 document.addEventListener("DOMContentLoaded", function () {
     var cards = [
         "Herz 7", "Herz 8", "Herz 9", "Herz 10", "Herz Bube", "Herz Dame", "Herz Koenig", "Herz Ass",
