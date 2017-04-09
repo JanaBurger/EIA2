@@ -14,44 +14,33 @@ document.addEventListener("DOMContentLoaded", function () {
         "Karo 7", "Karo 8", "Karo 9", "Karo 10", "Karo Bube", "Karo Dame", "Karo K�nig", "Karo Ass",
         "Kreuz 7", "Kreuz 8", "Kreuz 9", "Kreuz 10", "Kreuz Bube", "Kreuz Dame", "Kreuz K�nig", "Kreuz Ass"
     ];
+    //Variablen deklarieren
     var handcards;
     var ablagecards;
     var nachziehstapel = document.getElementById("nachziehstapel");
     var ablagestapel = document.getElementById("ablagestapel");
-    nachziehstapel.addEventListener("click", ClickEvent);
-    // if (handcards.length < 5 && cards.length != 0) {
-    function ClickEvent() {
-        var _loop_1 = function(i) {
-            var div = document.createElement("div"); //create div
-            document.getElementById("handstapel").appendChild(div); //anh�ngen an handkarten
-            var wert = Math.floor((Math.random() * 31) + 0);
-            div.className = "box";
-            var s = div.style;
-            s.borderStyle = "1 px solid black";
-            s.height = "15em";
-            s.width = "10em";
-            s.backgroundColor = "green";
-            s.cssFloat = "left";
-            //if (handcards.length < 5 && cards.length != 0) 
-            // let wert: number = Math.floor((Math.random() * 31) + 0);
-            div.className = "divBox";
-            div.textContent = cards[wert];
-            handcards.push(cards[wert]);
-            cards.splice(wert, 1); //entfernt Karte von Nachziehstapel
-            div.addEventListener("click", function () {
-                for (i, i < handcards.length; i++;) {
-                    var entferntesKind = document.getElementById("handstapel").removeChild(div);
-                    document.getElementById("ablagestapel").appendChild(div);
-                    ablagecards.push(handcards[i]);
-                    console.log("hallo");
+    nachziehstapel.addEventListener("click", clickEvent);
+    function clickEvent() {
+        if (cards.length > 0 && handcards.length < 5) {
+            var wert_1 = Math.floor((Math.random() * 31) + 0);
+            var auswahl = cards[wert_1];
+            cards.splice(wert_1, 1);
+            handcards.push(auswahl);
+            var div_1 = document.createElement("div"); //create div
+            document.getElementById("handstapel").appendChild(div_1);
+            div_1.className = "selected";
+            div_1.textContent = cards[wert_1];
+            div_1.addEventListener("click", function () {
+                for (var i = 0; i < handcards.length; i++) {
+                    if (this.textContent == handcards[wert_1]) {
+                        ablagecards.push(handcards[i]);
+                        handcards.splice(i, 1);
+                        break;
+                    }
+                    this.parentNode.removeChild(this);
                 }
             });
-            out_i_1 = i;
-        };
-        var out_i_1;
-        for (var i = 0; i < cards.length; i < 5) {
-            _loop_1(i);
-            i = out_i_1;
+            console.log(cards);
         }
     }
 });
