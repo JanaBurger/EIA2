@@ -53,8 +53,8 @@ namespace A4 {
 
         for (var i: number = 0; i < 8; i ++) {
             let randomFlower: number = Math.floor((Math.random() * 3) + 0);
-            var _x: number = (Math.random() * (280 - 0)) + 0;
-            var _y: number = (Math.random() * (250 - 130)) + 130;
+            let _x: number = (Math.random() * (280 - 0)) + 0;
+            let _y: number = (Math.random() * (250 - 130)) + 130;
             switch (randomFlower) {
             case 0:
                 drawTulpe(_x, _y);
