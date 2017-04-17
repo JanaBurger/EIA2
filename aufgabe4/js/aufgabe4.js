@@ -43,7 +43,7 @@ var A4;
         drawApfel(360, 60);
         drawApfel(355, 105);
         drawBlume(355, 235);
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 8; i++) {
             var randomFlower = Math.floor((Math.random() * 3) + 0);
             var _x = (Math.random() * (280 - 0)) + 0;
             var _y = (Math.random() * (250 - 130)) + 130;

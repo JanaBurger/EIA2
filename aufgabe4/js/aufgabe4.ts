@@ -51,7 +51,7 @@ namespace A4 {
         drawApfel (355, 105);
         drawBlume (355, 235);
 
-        for (var i: number = 0; i < 5; i ++) {
+        for (var i: number = 0; i < 8; i ++) {
             let randomFlower: number = Math.floor((Math.random() * 3) + 0);
             var _x: number = (Math.random() * (280 - 0)) + 0;
             var _y: number = (Math.random() * (250 - 130)) + 130;
