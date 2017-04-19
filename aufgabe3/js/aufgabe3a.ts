@@ -1,22 +1,19 @@
 /*
-Aufgabe: 3 b
+Aufgabe: 3 a
 Name: Jana Burger
 Matrikel: 255076
 Datum: 9.4.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.
+*/
 
-Diese Aufgabe wurde in Zusammenarbeit mit Selina und Jacqueline erstellt.
-Leider konnten wir die Aufgabe nicht vollständig lösen, auch nicht in der Gruppe.*/
-namespace A3_Events {
-    
+namespace A3 {
 let zeile: number = 0;
 let a: number = 1; //Anzahl Reis
-    
+
 document.addEventListener("DOMContentLoaded", function(): void {
 
-    
     //Aussehen von Body bleibt immer gleich 
     let b: CSSStyleDeclaration = document.body.style;
     b.width = "450px";
@@ -39,20 +36,47 @@ document.addEventListener("DOMContentLoaded", function(): void {
         }
     }
 
-    /********************************************************************************************************
-   Aufgabe 3a
-   ********************************************************************************************************/
-    let x: number = 0;
-    let divList: NodeListOf<HTMLElement> = document.getElementsByTagName("div");
+    //Aufgabe 3a
 
-    for (x; x < 8; x++) {
-    divList[x].addEventListener("click", clickEvent);    
+    for (let i: number = 0; i < 8; i++) {
+        var total: number = 0;
+
+        console.log("Schleife");
+        let fields: NodeListOf<HTMLElement> = document.getElementsByTagName("div");
+        fields[i].addEventListener("click", function() {
+            fields[i].classList.toggle("selected");
+
+            console.log(fields[i]);
+
+            let selected: NodeListOf<Element> = document.getElementsByClassName("selected");
+
+            console.log(selected);
+
+            if (selected.length == 0) {
+                document.getElementById("inhalt").style.display = "none";
+            }
+
+            else {
+                document.getElementById("inhalt").style.display = "inline-block";
+            }
+
+            document.getElementById("inhalt").textContent = "Summe der Körner - " + "Dezimal: " + total.toString() + ";" + " Hexadezimal: " + total.toString(16);
+
+
+            for (let i: number = 0; i < selected.length; i++) {
+                total += Number(selected[i].textContent);
+            }
+        });
     }
+    document.addEventListener("mousemove", function(Event) {
+        document.getElementById("inhalt").style.left = (Event.clientX + 10) + "px";
+        document.getElementById("inhalt").style.top = (Event.clientY + 10) + "px";
+    });
 
 });
 
 //Divs erzeugen
-function feld (): void {
+function Div(): void {
     let div: HTMLDivElement = document.createElement("div");
     document.body.appendChild(div);
     div.className = "DivBox";
@@ -74,7 +98,7 @@ function feld (): void {
 }
 
 //Schwarze Divs
-function blackColor (_number: number): void {
+function black(_number: number): void {
     let div: NodeList = document.getElementsByTagName("div");
     let currentDiv: HTMLDivElement = <HTMLDivElement>div[_number];
     if (div.length != 0) {
@@ -84,7 +108,7 @@ function blackColor (_number: number): void {
     }
 }
 //Weiße Divs
-function whiteColor (_number: number): void {
+function white(_number: number): void {
     let div: NodeList = document.getElementsByTagName("div");
     let currentDiv: HTMLDivElement = <HTMLDivElement>div[_number];
     if (div.length != 0) {
@@ -94,23 +118,5 @@ function whiteColor (_number: number): void {
     }
 }
 
-/********************************************************************************************************
-Aufgabe 3a
-********************************************************************************************************/
-let x: number = 0;
-let divList: NodeListOf<HTMLElement> = document.getElementsByTagName("div");
-let state: boolean = true;
 
-function clickEvent(): void {
-    for (x; x < 8; x++) {
-        if (state == true) {
-            divList[x].style.borderColor = "yellow";
-            state = false;
-        }
-        else {
-            divList[x].style.borderColor = "black";
-            state = true;
-        }
     }
-}
-}

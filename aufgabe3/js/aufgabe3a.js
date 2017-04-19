@@ -1,28 +1,26 @@
 /*
-Aufgabe: 3 b
+Aufgabe: 3 a
 Name: Jana Burger
 Matrikel: 255076
 Datum: 9.4.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
-
-Diese Aufgabe wurde in Zusammenarbeit mit Selina und Jacqueline erstellt.
-Leider konnten wir die Aufgabe nicht vollst�ndig l�sen, auch nicht in der Gruppe.*/
-var A3_Events;
-(function (A3_Events) {
-    var zeile = 0;
-    var a = 1; //Anzahl Reis
+*/
+var A3;
+(function (A3) {
+    let zeile = 0;
+    let a = 1; //Anzahl Reis
     document.addEventListener("DOMContentLoaded", function () {
         //Aussehen von Body bleibt immer gleich 
-        var b = document.body.style;
+        let b = document.body.style;
         b.width = "450px";
         b.margin = "50px";
         b.backgroundColor = "#F7F7F7";
-        var countField = 0;
+        let countField = 0;
         //Schachbrett
-        for (var i = 0; i < 8; i++) {
-            for (var j = 0; j < 8; j++) {
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 8; j++) {
                 Div();
                 if (i % 2 == j % 2) {
                     white(countField);
@@ -33,22 +31,40 @@ var A3_Events;
                 countField++;
             }
         }
-        /********************************************************************************************************
-       Aufgabe 3a
-       ********************************************************************************************************/
-        var x = 0;
-        var divList = document.getElementsByTagName("div");
-        for (x; x < 8; x++) {
-            divList[x].addEventListener("click", clickEvent);
+        //Aufgabe 3a
+        for (let i = 0; i < 8; i++) {
+            var total = 0;
+            console.log("Schleife");
+            let fields = document.getElementsByTagName("div");
+            fields[i].addEventListener("click", function () {
+                fields[i].classList.toggle("selected");
+                console.log(fields[i]);
+                let selected = document.getElementsByClassName("selected");
+                console.log(selected);
+                if (selected.length == 0) {
+                    document.getElementById("inhalt").style.display = "none";
+                }
+                else {
+                    document.getElementById("inhalt").style.display = "inline-block";
+                }
+                document.getElementById("inhalt").textContent = "Summe der K�rner - " + "Dezimal: " + total.toString() + ";" + " Hexadezimal: " + total.toString(16);
+                for (let i = 0; i < selected.length; i++) {
+                    total += Number(selected[i].textContent);
+                }
+            });
         }
+        document.addEventListener("mousemove", function (Event) {
+            document.getElementById("inhalt").style.left = (Event.clientX + 10) + "px";
+            document.getElementById("inhalt").style.top = (Event.clientY + 10) + "px";
+        });
     });
     //Divs erzeugen
-    function feld() {
-        var div = document.createElement("div");
+    function Div() {
+        let div = document.createElement("div");
         document.body.appendChild(div);
         div.className = "DivBox";
         //Aussehen von Divs
-        var s = div.style;
+        let s = div.style;
         s.borderStyle = "solid";
         s.borderColor = "#000000";
         s.borderWidth = "1px";
@@ -62,9 +78,9 @@ var A3_Events;
         a = a * 2;
     }
     //Schwarze Divs
-    function blackColor(_number) {
-        var div = document.getElementsByTagName("div");
-        var currentDiv = div[_number];
+    function black(_number) {
+        let div = document.getElementsByTagName("div");
+        let currentDiv = div[_number];
         if (div.length != 0) {
             currentDiv.style.backgroundColor = "black";
             currentDiv.style.color = "white";
@@ -72,32 +88,14 @@ var A3_Events;
         }
     }
     //Wei�e Divs
-    function whiteColor(_number) {
-        var div = document.getElementsByTagName("div");
-        var currentDiv = div[_number];
+    function white(_number) {
+        let div = document.getElementsByTagName("div");
+        let currentDiv = div[_number];
         if (div.length != 0) {
             currentDiv.style.backgroundColor = "white";
             currentDiv.style.color = "black";
             currentDiv.style.textAlign = "center";
         }
     }
-    /********************************************************************************************************
-    Aufgabe 3a
-    ********************************************************************************************************/
-    var x = 0;
-    var divList = document.getElementsByTagName("div");
-    var state = true;
-    function clickEvent() {
-        for (x; x < 8; x++) {
-            if (state == true) {
-                divList[x].style.borderColor = "yellow";
-                state = false;
-            }
-            else {
-                divList[x].style.borderColor = "black";
-                state = true;
-            }
-        }
-    }
-})(A3_Events || (A3_Events = {}));
+})(A3 || (A3 = {}));
 //# sourceMappingURL=aufgabe3a.js.map

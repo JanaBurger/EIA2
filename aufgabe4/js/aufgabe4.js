@@ -9,9 +9,9 @@ Er wurde nicht kopiert und auch nicht diktiert.*/
 var A4;
 (function (A4) {
     window.addEventListener("load", init);
-    var crc2;
+    let crc2;
     function init() {
-        var canvas = document.getElementsByTagName("canvas")[0];
+        let canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         console.log(canvas);
         //Wiese
@@ -44,9 +44,9 @@ var A4;
         drawApfel(355, 105);
         drawBlume(355, 235);
         for (var i = 0; i < 8; i++) {
-            var randomFlower = Math.floor((Math.random() * 3) + 0);
-            var _x = (Math.random() * (280 - 0)) + 0;
-            var _y = (Math.random() * (250 - 130)) + 130;
+            let randomFlower = Math.floor((Math.random() * 3) + 0);
+            let _x = (Math.random() * (280 - 0)) + 0;
+            let _y = (Math.random() * (250 - 130)) + 130;
             switch (randomFlower) {
                 case 0:
                     drawTulpe(_x, _y);
