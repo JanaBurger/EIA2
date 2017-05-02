@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
 
         console.log("Schleife");
         let fields: NodeListOf<HTMLElement> = document.getElementsByTagName("div");
-        fields[i].addEventListener("click", function() {
+        fields[i].addEventListener("click", function(): void {
             fields[i].classList.toggle("selected");
 
             console.log(fields[i]);
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(): void {
                 document.getElementById("inhalt").style.display = "inline-block";
             }
 
-            document.getElementById("inhalt").textContent = "Summe der Körner - " + "Dezimal: " + total.toString() + ";" + " Hexadezimal: " + total.toString(16);
+            document.getElementById("inhalt").textContent = "Summe - " + "Dezimal: " + total.toString() + ";" + " Hexadezimal: " + total.toString(16);
 
 
             for (let i: number = 0; i < selected.length; i++) {

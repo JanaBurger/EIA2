@@ -47,7 +47,7 @@ var A3;
                 else {
                     document.getElementById("inhalt").style.display = "inline-block";
                 }
-                document.getElementById("inhalt").textContent = "Summe der K�rner - " + "Dezimal: " + total.toString() + ";" + " Hexadezimal: " + total.toString(16);
+                document.getElementById("inhalt").textContent = "Summe - " + "Dezimal: " + total.toString() + ";" + " Hexadezimal: " + total.toString(16);
                 for (let i = 0; i < selected.length; i++) {
                     total += Number(selected[i].textContent);
                 }

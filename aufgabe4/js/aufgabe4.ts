@@ -50,6 +50,8 @@ namespace A4 {
         drawApfel (360, 60);
         drawApfel (355, 105);
         drawBlume (355, 235);
+        drawKorb (325, 120);
+        drawBiene (320, 100);
 
         for (var i: number = 0; i < 8; i ++) {
             let randomFlower: number = Math.floor((Math.random() * 3) + 0);
@@ -68,6 +70,72 @@ namespace A4 {
             }
         }
     }
+    
+    function drawBiene (_x: number, _y: number): void {
+        crc2.beginPath();
+        crc2.strokeStyle = "black";
+        crc2.fillStyle = "black";
+        crc2.arc(_x, _y, 5, 0.5 * Math.PI, 1.5 * Math.PI);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.strokeStyle = "yellow";
+        crc2.fillStyle = "yellow";
+        crc2.rect (_x, _y - 5, 5, 10);
+        crc2.stroke();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.strokeStyle = "black";
+        crc2.fillStyle = "black";
+        crc2.arc(_x + 5, _y, 5, 1.5 * Math.PI, 0.5 * Math.PI);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.strokeStyle = "yellow";
+        crc2.fillStyle = "yellow";
+        crc2.arc(_x - 8, _y - 5, 4, 0 * Math.PI, 2 * Math.PI);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        crc2.beginPath();
+        crc2.strokeStyle = "black";
+        crc2.fillStyle = "black";
+        crc2.moveTo (_x - 7, _y - 8);
+        crc2.lineTo (_x - 5, _y - 12);
+        crc2.moveTo (_x - 9, _y - 8);
+        crc2.lineTo (_x - 11, _y - 12);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fill();
+        }
+    
+    function drawKorb (_x: number, _y: number): void {
+        crc2.beginPath();
+        crc2.strokeStyle = "lightbrown";
+        crc2.fillStyle = "lightbrown";
+        crc2.moveTo (_x, _y);
+        crc2.lineTo (_x + 15, _y);
+        crc2.arc(_x + 7.5, _y, 7.5, 1 * Math.PI, 0 * Math.PI);
+        crc2.stroke();
+        crc2.fill();
+        
+        crc2.beginPath();
+        crc2.moveTo (_x - 5, _y + 10 );
+        crc2.lineTo (_x + 20, _y + 10);
+        crc2.arc(_x + 7.5, _y + 10, 12.5, 1 * Math.PI, 0 * Math.PI);
+        crc2.stroke();
+        crc2.fill();
+        
+        crc2.beginPath();
+        crc2.strokeStyle = "black";
+        crc2.fillStyle = "black";
+        crc2.arc(_x + 5, _y - 2.5, 2.5, 0 * Math.PI, 2 * Math.PI);
+        crc2.stroke();
+        crc2.fill();
+        }
+    
     function drawBerg (_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "grey";

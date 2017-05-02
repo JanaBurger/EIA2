@@ -4,22 +4,38 @@ Name: Jana Burger
 Matrikel: 255076
 Datum: 17.4.17
     
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-Er wurde nicht kopiert und auch nicht diktiert.*/
-var A4;
-(function (A4) {
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.
+
+Ein Teil der Aufgabe wurde in Zusammenarbeit mit Selina und Jacqueline erledigt*/
+
+
+
+namespace A4 {
     window.addEventListener("load", init);
-    let crc2;
-    function init() {
-        let canvas = document.getElementsByTagName("canvas")[0];
+
+    let crc2: CanvasRenderingContext2D;
+    let x: number[] = [];
+    let y: number[] = [];
+    let n: number = 10;
+    let canvas: HTMLCanvasElement;
+    canvas = document.getElementsByTagName("canvas")[0];
+    let imgData: ImageData;
+
+
+    function init(): void {
+        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         console.log(canvas);
+
+
         //Wiese
         crc2.fillStyle = "#00ff00";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
         //Himmel
         crc2.fillStyle = "lightblue";
         crc2.fillRect(0, 0, canvas.width, 120);
+
         drawBerg(0, 120);
         drawKleinerBerg(50, 120);
         drawMittlererBerg(85, 120);
@@ -44,11 +60,12 @@ var A4;
         drawApfel(355, 105);
         drawBlume(355, 235);
         drawKorb(325, 120);
-        drawBiene(320, 100);
-        for (var i = 0; i < 8; i++) {
-            let randomFlower = Math.floor((Math.random() * 3) + 0);
-            let _x = (Math.random() * (280 - 0)) + 0;
-            let _y = (Math.random() * (250 - 130)) + 130;
+        //drawBiene(320, 100);
+
+        for (var i: number = 0; i < 8; i++) {
+            let randomFlower: number = Math.floor((Math.random() * 3) + 0);
+            let _x: number = (Math.random() * (280 - 0)) + 0;
+            let _y: number = (Math.random() * (250 - 130)) + 130;
             switch (randomFlower) {
                 case 0:
                     drawTulpe(_x, _y);
@@ -61,8 +78,60 @@ var A4;
                     break;
             }
         }
+
+        //Bild wird gespeichert
+        imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+
+        for (let i: number = 0; i < n; i++) {
+            x[i] = 320;
+            y[i] = 150;
+            drawBiene(x[i], y[i]);
+        }
+        
+        window.setTimeout(animate, 30);
+
+        //neue Biene wird erzeugt
+        canvas.addEventListener("click", weitereBiene);
+        canvas.addEventListener("push", weitereBiene);
+
     }
-    function drawBiene(_x, _y) {
+    //Funktionen 
+
+    //neue Biene wird erzeugt
+    function weitereBiene(): void {
+        x.push(325); y.push(120);
+        n++;
+        console.log("neue Biene");
+    }
+
+
+    //Animation
+    function animate(): void {
+        console.log("Animate called");
+        
+        crc2.putImageData(imgData, 0, 0);
+
+        for (let i: number = 0; i < n; i++) {
+
+            x[i] += Math.random() * 5 - 3;
+            y[i] += Math.random() * 4 - 2;
+
+            if (x[i] < 0) {
+                x[i] = 400;
+            }
+            if (y[i] < 0) {
+                y[i] = 300;
+            }
+            if (y[i] > 300) {
+                y[i] = 0;
+            }
+            drawBiene(x[i], y[i]);
+        }
+        window.setTimeout(animate, 30);
+    }
+
+
+    function drawBiene(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "black";
         crc2.fillStyle = "black";
@@ -101,7 +170,8 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawKorb(_x, _y) {
+
+    function drawKorb(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "lightbrown";
         crc2.fillStyle = "lightbrown";
@@ -110,12 +180,14 @@ var A4;
         crc2.arc(_x + 7.5, _y, 7.5, 1 * Math.PI, 0 * Math.PI);
         crc2.stroke();
         crc2.fill();
+
         crc2.beginPath();
         crc2.moveTo(_x - 5, _y + 10);
         crc2.lineTo(_x + 20, _y + 10);
         crc2.arc(_x + 7.5, _y + 10, 12.5, 1 * Math.PI, 0 * Math.PI);
         crc2.stroke();
         crc2.fill();
+
         crc2.beginPath();
         crc2.strokeStyle = "black";
         crc2.fillStyle = "black";
@@ -123,7 +195,7 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawBerg(_x, _y) {
+    function drawBerg(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "grey";
         crc2.fillStyle = "grey";
@@ -132,8 +204,9 @@ var A4;
         crc2.lineTo(_x + 60, _y + 0);
         crc2.stroke();
         crc2.fill();
+
     }
-    function drawKleinerBerg(_x, _y) {
+    function drawKleinerBerg(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "grey";
         crc2.fillStyle = "grey";
@@ -143,7 +216,8 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawMittlererBerg(_x, _y) {
+
+    function drawMittlererBerg(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "grey";
         crc2.fillStyle = "grey";
@@ -153,7 +227,9 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawTulpe(_x, _y) {
+
+    function drawTulpe(_x: number, _y: number): void {
+
         //Stiel
         crc2.beginPath();
         crc2.strokeStyle = "darkgreen";
@@ -191,7 +267,8 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawMargerite(_x, _y) {
+
+    function drawMargerite(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "darkgreen";
         crc2.fillStyle = "darkgreen";
@@ -202,6 +279,7 @@ var A4;
         crc2.closePath();
         crc2.stroke();
         crc2.fill();
+
         //Blueten
         crc2.beginPath();
         crc2.strokeStyle = "white";
@@ -224,6 +302,7 @@ var A4;
         crc2.closePath();
         crc2.stroke();
         crc2.fill();
+
         //Kreis
         crc2.beginPath();
         crc2.strokeStyle = "yellow";
@@ -232,8 +311,10 @@ var A4;
         crc2.closePath();
         crc2.stroke();
         crc2.fill();
+
     }
-    function drawBlume(_x, _y) {
+
+    function drawBlume(_x: number, _y: number): void {
         crc2.beginPath();
         //Stiel
         crc2.strokeStyle = "darkgreen";
@@ -277,6 +358,7 @@ var A4;
         crc2.arc(_x - 5, _y - 27, 5, 0, 360);
         crc2.stroke();
         crc2.fill();
+
         //Innenkreis
         crc2.beginPath();
         crc2.strokeStyle = "#FF8C00";
@@ -284,8 +366,10 @@ var A4;
         crc2.arc(_x, _y - 34, 4, 0, 360);
         crc2.stroke();
         crc2.fill();
+
     }
-    function drawWolke(_x, _y) {
+
+    function drawWolke(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "#ffffff";
         crc2.fillStyle = "#ffffff";
@@ -318,7 +402,8 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawBaum(_x, _y) {
+
+    function drawBaum(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "#8b4513";
         crc2.fillStyle = "#8b4513";
@@ -360,7 +445,9 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawApfel(_x, _y) {
+
+    function drawApfel(_x: number, _y: number): void {
+
         crc2.beginPath();
         crc2.strokeStyle = "red";
         crc2.fillStyle = "red";
@@ -368,7 +455,8 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-    function drawSun(_x, _y) {
+
+    function drawSun(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.strokeStyle = "yellow";
         crc2.fillStyle = "yellow";
@@ -377,5 +465,6 @@ var A4;
         crc2.stroke();
         crc2.fill();
     }
-})(A4 || (A4 = {}));
-//# sourceMappingURL=aufgabe4.js.map
+
+}
+
