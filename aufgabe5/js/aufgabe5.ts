@@ -9,8 +9,6 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 Ein Teil der Aufgabe wurde in Zusammenarbeit mit Selina und Jacqueline erledigt*/
 
-
-
 namespace A4 {
     window.addEventListener("load", init);
 
