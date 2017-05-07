@@ -2,10 +2,11 @@
 Aufgabe: 6a
 Name: Jana Burger
 Matrikel: 255076
-Datum: 6.5.17
+Datum: 7.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
-Er wurde nicht kopiert und auch nicht diktiert.*/
+Er wurde nicht kopiert und auch nicht diktiert.
+Aufgabe wurde mit Selina und Jacqueline erstellt*/
 
 namespace A6a {
     window.addEventListener("load", init);
@@ -20,13 +21,13 @@ namespace A6a {
     canvas = document.getElementsByTagName("canvas")[0];
     let imgData: ImageData;
 
-    let b: Bee = { x: 0, y: 0, size: 0, color: "" };
+    let b: Bee = { x: 0, y: 0, richtung: 0, color: "" };
 
     //Interface
     interface Bee {
         x: number;
         y: number;
-        size: number;
+        richtung: number;
         color: string;
     }
 
@@ -90,9 +91,9 @@ namespace A6a {
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
         for (let i: number = 0; i < n; i++) {
-            b.x = 320;
-            b.y = 150;
-            b.size = Math.random() * 30 + 10;
+            b.x = 325;
+            b.y = 120;
+            b.richtung = Math.random() * 5 - 1;
             b.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
             bees[i] = b;
             
@@ -110,9 +111,13 @@ namespace A6a {
 
     //neue Biene wird erzeugt
     function weitereBiene(): void {
-        bees.push({x: 325, y: 120, size: 0, color: ""});
+        bees.push({x: 325, y: 120, richtung: 0, color: ""});
         n++;
+        b.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        b.richtung = b.x += Math.random() * 6 - 6;
+        b.richtung = b.y += Math.random() * 7 - 4;
         console.log("neue Biene");
+
     }
 
 
@@ -136,13 +141,13 @@ namespace A6a {
             if (b.y > 300) {
                 b.y = 0;
             }
-            drawBiene(b.x, b.y, b.size, b.color);
+            drawBiene(b.x, b.y, b.richtung, b.color);
         }
-        window.setTimeout(animate, 20);
+        window.setTimeout(animate, 30);
     }
 
 
-    function drawBiene(_x: number, _y: number, _size: number, _color: string): void {
+    function drawBiene(_x: number, _y: number, _richtung: number, _color: string): void {
         crc2.beginPath();
         crc2.strokeStyle = "black";
         crc2.fillStyle = "black";

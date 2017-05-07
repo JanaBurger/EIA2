@@ -5,7 +5,8 @@ Matrikel: 255076
 Datum: 6.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-Er wurde nicht kopiert und auch nicht diktiert.*/
+Er wurde nicht kopiert und auch nicht diktiert.
+Aufgabe wurde mit Selina und Jacqueline erstellt*/
 var StudiVZ;
 (function (StudiVZ) {
     var students = [];
