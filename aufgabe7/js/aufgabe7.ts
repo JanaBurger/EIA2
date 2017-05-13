@@ -8,7 +8,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
 Aufgabe wurde mit Selina und Jacqueline erstellt*/
 
-namespace L7_Classes {
+namespace Classes {
 
     export var crc2: CanvasRenderingContext2D;
     var canvas: HTMLCanvasElement;
@@ -19,13 +19,17 @@ namespace L7_Classes {
     let tulpe: Flowers;
     let margerite: Flowers;
     let blume: Flowers;
-    let flower: Flowers[] = [tulpe, margerite, blume];
+    let flowers: Flowers[] = [tulpe, margerite, blume];
 
     window.addEventListener("load", init);
 
     let imgData: ImageData;
 
-    function init(): void {
+    function init(_event: Event): void {
+        
+        let x: number;
+        let y: number;
+        
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         console.log(canvas);

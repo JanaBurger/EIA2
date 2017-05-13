@@ -6,60 +6,65 @@ Datum: 7.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.*/
-var L7_Classes;
-(function (L7_Classes) {
+var Classes;
+(function (Classes) {
     //Klasse Bienen
     class Bee {
-        constructor(_x, _y, _color, _richtung) {
+        constructor(_x, _y, _color, _size) {
             console.log("Hey, I'm Bob!");
-            //this.setRandomPosition();
+            this.setRandomPosition();
             this.x = _x;
             this.y = _y;
             this.color = _color;
-            this.richtung = _richtung;
+            this.size = _size;
         }
         update() {
             this.draw();
             this.move();
         }
         draw() {
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "black";
-            L7_Classes.crc2.fillStyle = "black";
-            L7_Classes.crc2.arc(this.x, this.y, 5, 0.5 * Math.PI, 1.5 * Math.PI);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = this.color;
-            L7_Classes.crc2.fillStyle = this.color;
-            L7_Classes.crc2.rect(this.x, this.y - 5, 5, 10);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "black";
-            L7_Classes.crc2.fillStyle = "black";
-            L7_Classes.crc2.arc(this.x + 5, this.y, 5, 1.5 * Math.PI, 0.5 * Math.PI);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = this.color;
-            L7_Classes.crc2.fillStyle = this.color;
-            L7_Classes.crc2.arc(this.x - 8, this.y - 5, 4, 0 * Math.PI, 2 * Math.PI);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "black";
-            L7_Classes.crc2.fillStyle = "black";
-            L7_Classes.crc2.moveTo(this.x - 7, this.y - 8);
-            L7_Classes.crc2.lineTo(this.x - 5, this.y - 12);
-            L7_Classes.crc2.moveTo(this.x - 9, this.y - 8);
-            L7_Classes.crc2.lineTo(this.x - 11, this.y - 12);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            //Fl�gel
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(this.x + 3, this.y - this.size / 2 - 3 - 3 / 2);
+            Classes.crc2.bezierCurveTo(this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3, this.y - 3 + 3 / 2);
+            Classes.crc2.bezierCurveTo(this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3, this.y - 3 - 5 / 2);
+            Classes.crc2.fillStyle = "rgba(255,255,255, 0.8)";
+            Classes.crc2.fill();
+            Classes.crc2.closePath();
+            //K�rper der Biene
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(this.x, this.y - this.size / 2);
+            Classes.crc2.bezierCurveTo(this.x + this.size, this.y - this.size / 2, this.x + this.size / 2, this.y + this.size / 2, this.x, this.y + this.size / 2);
+            Classes.crc2.bezierCurveTo(this.x - this.size, this.y + this.size / 2, this.x - this.size / 2, this.y - this.size / 2, this.x, this.y - this.size / 2);
+            Classes.crc2.fillStyle = this.color;
+            Classes.crc2.fill();
+            Classes.crc2.closePath();
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(this.x, this.y - this.size / 2);
+            Classes.crc2.bezierCurveTo(this.x + this.size, this.y - this.size / 4, this.x + this.size / 2, this.y + this.size / 2, this.x, this.y + this.size / 2);
+            Classes.crc2.bezierCurveTo(this.x - this.size, this.y + this.size / 4, this.x - this.size / 2, this.y - this.size / 2, this.x, this.y - this.size / 2);
+            Classes.crc2.strokeStyle = "black";
+            Classes.crc2.stroke();
+            Classes.crc2.closePath();
+            //Kopf
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(this.x - 1, this.y + this.size / 2);
+            Classes.crc2.bezierCurveTo(this.x - this.size, this.y, this.x - 5, this.y - this.size / 2, this.x - 1, this.y - this.size / 2);
+            Classes.crc2.fillStyle = "black";
+            Classes.crc2.fill();
+            Classes.crc2.closePath();
+            //Streifen
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(this.x + 0.25, this.y + this.size / 2);
+            Classes.crc2.lineTo(this.x, this.y - this.size / 2);
+            Classes.crc2.strokeStyle = "black";
+            Classes.crc2.stroke();
+            Classes.crc2.closePath();
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(this.x + 2.25, this.y + this.size / 2);
+            Classes.crc2.lineTo(this.x + 2.25, this.y - this.size / 2);
+            Classes.crc2.strokeStyle = "black";
+            Classes.crc2.stroke();
         }
         move() {
             this.x += Math.random() * 5 - 3;
@@ -74,8 +79,16 @@ var L7_Classes;
                 this.y = 0;
             }
         }
+        setRandomPosition() {
+            this.x = Math.random() * 200;
+            this.y = Math.random() * 200;
+        }
+        setRandomStyle() {
+            this.size = Math.random() * 30 + 10;
+            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        }
     }
-    L7_Classes.Bee = Bee;
+    Classes.Bee = Bee;
     //Klasse Blumen
     class Flowers {
         constructor(_x, _y, _size, _flowerType) {
@@ -86,135 +99,135 @@ var L7_Classes;
         }
         tulpe(_x, _y) {
             //Stiel
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "darkgreen";
-            L7_Classes.crc2.fillStyle = "darkgreen";
-            L7_Classes.crc2.moveTo(_x, _y);
-            L7_Classes.crc2.lineTo(_x + 5, _y - 25);
-            L7_Classes.crc2.lineTo(_x + 8, _y - 25);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.stroke();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "darkgreen";
+            Classes.crc2.fillStyle = "darkgreen";
+            Classes.crc2.moveTo(_x, _y);
+            Classes.crc2.lineTo(_x + 5, _y - 25);
+            Classes.crc2.lineTo(_x + 8, _y - 25);
+            Classes.crc2.closePath();
+            Classes.crc2.fill();
+            Classes.crc2.stroke();
             //Bluete
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "red";
-            L7_Classes.crc2.fillStyle = "red";
-            L7_Classes.crc2.arc(_x + 8, _y - 33, 8, 0 * Math.PI, 1 * Math.PI);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.moveTo(_x, _y - 32);
-            L7_Classes.crc2.lineTo(_x, _y - 40);
-            L7_Classes.crc2.lineTo(_x + 5, _y - 32);
-            L7_Classes.crc2.lineTo(_x + 8, _y - 40);
-            L7_Classes.crc2.lineTo(_x + 11, _y - 32);
-            L7_Classes.crc2.lineTo(_x + 16, _y - 40);
-            L7_Classes.crc2.lineTo(_x + 16, _y - 32);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "red";
+            Classes.crc2.fillStyle = "red";
+            Classes.crc2.arc(_x + 8, _y - 33, 8, 0 * Math.PI, 1 * Math.PI);
+            Classes.crc2.closePath();
+            Classes.crc2.fill();
+            Classes.crc2.stroke();
+            Classes.crc2.beginPath();
+            Classes.crc2.moveTo(_x, _y - 32);
+            Classes.crc2.lineTo(_x, _y - 40);
+            Classes.crc2.lineTo(_x + 5, _y - 32);
+            Classes.crc2.lineTo(_x + 8, _y - 40);
+            Classes.crc2.lineTo(_x + 11, _y - 32);
+            Classes.crc2.lineTo(_x + 16, _y - 40);
+            Classes.crc2.lineTo(_x + 16, _y - 32);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
             //Blatt
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "darkgreen";
-            L7_Classes.crc2.fillStyle = "darkgreen";
-            L7_Classes.crc2.arc(_x + 3, _y - 20, 10, 0.5 * Math.PI, 1 * Math.PI);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "darkgreen";
+            Classes.crc2.fillStyle = "darkgreen";
+            Classes.crc2.arc(_x + 3, _y - 20, 10, 0.5 * Math.PI, 1 * Math.PI);
+            Classes.crc2.closePath();
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
         }
         margerite(_x, _y) {
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "darkgreen";
-            L7_Classes.crc2.fillStyle = "darkgreen";
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "darkgreen";
+            Classes.crc2.fillStyle = "darkgreen";
             //Stiel 
-            L7_Classes.crc2.moveTo(_x, _y);
-            L7_Classes.crc2.lineTo(_x - 1, _y - 30);
-            L7_Classes.crc2.lineTo(_x + 1, _y - 30);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.moveTo(_x, _y);
+            Classes.crc2.lineTo(_x - 1, _y - 30);
+            Classes.crc2.lineTo(_x + 1, _y - 30);
+            Classes.crc2.closePath();
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
             //Blueten
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "white";
-            L7_Classes.crc2.fillStyle = "white";
-            L7_Classes.crc2.moveTo(_x + 1, _y - 30);
-            L7_Classes.crc2.lineTo(_x + 15, _y - 18);
-            L7_Classes.crc2.lineTo(_x + 5, _y - 33);
-            L7_Classes.crc2.lineTo(_x + 23, _y - 36);
-            L7_Classes.crc2.lineTo(_x + 5, _y - 38);
-            L7_Classes.crc2.lineTo(_x + 18, _y - 53);
-            L7_Classes.crc2.lineTo(_x + 2, _y - 40);
-            L7_Classes.crc2.lineTo(_x + 1, _y - 58);
-            L7_Classes.crc2.lineTo(_x - 1, _y - 40);
-            L7_Classes.crc2.lineTo(_x - 17, _y - 53);
-            L7_Classes.crc2.lineTo(_x - 4, _y - 38);
-            L7_Classes.crc2.lineTo(_x - 22, _y - 36);
-            L7_Classes.crc2.lineTo(_x - 4, _y - 33);
-            L7_Classes.crc2.lineTo(_x - 14, _y - 18);
-            L7_Classes.crc2.lineTo(_x - 1, _y - 30);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "white";
+            Classes.crc2.fillStyle = "white";
+            Classes.crc2.moveTo(_x + 1, _y - 30);
+            Classes.crc2.lineTo(_x + 15, _y - 18);
+            Classes.crc2.lineTo(_x + 5, _y - 33);
+            Classes.crc2.lineTo(_x + 23, _y - 36);
+            Classes.crc2.lineTo(_x + 5, _y - 38);
+            Classes.crc2.lineTo(_x + 18, _y - 53);
+            Classes.crc2.lineTo(_x + 2, _y - 40);
+            Classes.crc2.lineTo(_x + 1, _y - 58);
+            Classes.crc2.lineTo(_x - 1, _y - 40);
+            Classes.crc2.lineTo(_x - 17, _y - 53);
+            Classes.crc2.lineTo(_x - 4, _y - 38);
+            Classes.crc2.lineTo(_x - 22, _y - 36);
+            Classes.crc2.lineTo(_x - 4, _y - 33);
+            Classes.crc2.lineTo(_x - 14, _y - 18);
+            Classes.crc2.lineTo(_x - 1, _y - 30);
+            Classes.crc2.closePath();
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
             //Kreis
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "yellow";
-            L7_Classes.crc2.fillStyle = "yellow";
-            L7_Classes.crc2.arc(_x, _y - 35, 5, 0, 360);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "yellow";
+            Classes.crc2.fillStyle = "yellow";
+            Classes.crc2.arc(_x, _y - 35, 5, 0, 360);
+            Classes.crc2.closePath();
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
         }
         blume(_x, _y, _size) {
-            L7_Classes.crc2.beginPath();
+            Classes.crc2.beginPath();
             //Stiel
-            L7_Classes.crc2.strokeStyle = "darkgreen";
-            L7_Classes.crc2.fillStyle = "darkgreen";
-            L7_Classes.crc2.moveTo(_x, _y);
-            L7_Classes.crc2.lineTo(_x - 1, _y - 30);
-            L7_Classes.crc2.lineTo(_x + 1, _y - 30);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.strokeStyle = "darkgreen";
+            Classes.crc2.fillStyle = "darkgreen";
+            Classes.crc2.moveTo(_x, _y);
+            Classes.crc2.lineTo(_x - 1, _y - 30);
+            Classes.crc2.lineTo(_x + 1, _y - 30);
+            Classes.crc2.closePath();
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
             //Blatt
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.arc(_x, _y - 20, 10, 0 * Math.PI, 0.5 * Math.PI);
-            L7_Classes.crc2.closePath();
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.arc(_x, _y - 20, 10, 0 * Math.PI, 0.5 * Math.PI);
+            Classes.crc2.closePath();
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
             //Bluete
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "#ba55d3";
-            L7_Classes.crc2.fillStyle = "#ba55d3";
-            L7_Classes.crc2.arc(_x + 5, _y - 27, 5, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.arc(_x + 8, _y - 32, 5, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.arc(_x + 5, _y - 39, 5, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.arc(_x - 5, _y - 39, 5, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.arc(_x - 8, _y - 32, 5, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.arc(_x - 5, _y - 27, 5, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "#ba55d3";
+            Classes.crc2.fillStyle = "#ba55d3";
+            Classes.crc2.arc(_x + 5, _y - 27, 5, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.arc(_x + 8, _y - 32, 5, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.arc(_x + 5, _y - 39, 5, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.arc(_x - 5, _y - 39, 5, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.arc(_x - 8, _y - 32, 5, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.arc(_x - 5, _y - 27, 5, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
             //Innenkreis
-            L7_Classes.crc2.beginPath();
-            L7_Classes.crc2.strokeStyle = "#FF8C00";
-            L7_Classes.crc2.fillStyle = "#FF8C00";
-            L7_Classes.crc2.arc(_x, _y - 34, 4, 0, 360);
-            L7_Classes.crc2.stroke();
-            L7_Classes.crc2.fill();
+            Classes.crc2.beginPath();
+            Classes.crc2.strokeStyle = "#FF8C00";
+            Classes.crc2.fillStyle = "#FF8C00";
+            Classes.crc2.arc(_x, _y - 34, 4, 0, 360);
+            Classes.crc2.stroke();
+            Classes.crc2.fill();
         }
         draw() {
             switch (this.flowerType) {
@@ -230,6 +243,6 @@ var L7_Classes;
             this.draw();
         }
     }
-    L7_Classes.Flowers = Flowers;
-})(L7_Classes || (L7_Classes = {}));
+    Classes.Flowers = Flowers;
+})(Classes || (Classes = {}));
 //# sourceMappingURL=Bees.js.map

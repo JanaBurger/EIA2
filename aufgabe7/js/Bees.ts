@@ -6,22 +6,23 @@ Datum: 7.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.*/
-namespace L7_Classes {
+
+namespace Classes {
 
     //Klasse Bienen
     export class Bee {
         x: number;
         y: number;
-        richtung: number;
+        size: number;
         color: string;
 
-        constructor(_x: number, _y: number, _color: string, _richtung: number) {
+        constructor(_x: number, _y: number, _color: string, _size: number) {
             console.log("Hey, I'm Bob!");
-            //this.setRandomPosition();
+            this.setRandomPosition();
             this.x = _x;
             this.y = _y;
             this.color = _color;
-            this.richtung = _richtung;
+            this.size = _size;
         }
 
         update(): void {
@@ -29,46 +30,49 @@ namespace L7_Classes {
             this.move();
         }
 
-
-
         draw(): void {
+            //Flügel
             crc2.beginPath();
-            crc2.strokeStyle = "black";
-            crc2.fillStyle = "black";
-            crc2.arc(this.x, this.y, 5, 0.5 * Math.PI, 1.5 * Math.PI);
-            crc2.closePath();
-            crc2.stroke();
+            crc2.moveTo(this.x + 3, this.y - this.size / 2 - 3 - 3 / 2);
+            crc2.bezierCurveTo(this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3, this.y - 3 + 3 / 2);
+            crc2.bezierCurveTo(this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3, this.y - 3 - 5 / 2);
+            crc2.fillStyle = "rgba(255,255,255, 0.8)";
             crc2.fill();
+            crc2.closePath();
+            //Körper der Biene
             crc2.beginPath();
-            crc2.strokeStyle = this.color;
+            crc2.moveTo(this.x, this.y - this.size / 2);
+            crc2.bezierCurveTo(this.x + this.size, this.y - this.size / 2, this.x + this.size / 2, this.y + this.size / 2, this.x, this.y + this.size / 2);
+            crc2.bezierCurveTo(this.x - this.size, this.y + this.size / 2, this.x - this.size / 2, this.y - this.size / 2, this.x, this.y - this.size / 2);
             crc2.fillStyle = this.color;
-            crc2.rect(this.x, this.y - 5, 5, 10);
-            crc2.stroke();
             crc2.fill();
+            crc2.closePath();
             crc2.beginPath();
+            crc2.moveTo(this.x, this.y - this.size / 2);
+            crc2.bezierCurveTo(this.x + this.size, this.y - this.size / 4, this.x + this.size / 2, this.y + this.size / 2, this.x, this.y + this.size / 2);
+            crc2.bezierCurveTo(this.x - this.size, this.y + this.size / 4, this.x - this.size / 2, this.y - this.size / 2, this.x, this.y - this.size / 2);
             crc2.strokeStyle = "black";
+            crc2.stroke();
+            crc2.closePath();
+            //Kopf
+            crc2.beginPath();
+            crc2.moveTo(this.x - 1, this.y + this.size / 2);
+            crc2.bezierCurveTo(this.x - this.size, this.y, this.x - 5, this.y - this.size / 2, this.x - 1, this.y - this.size / 2);
             crc2.fillStyle = "black";
-            crc2.arc(this.x + 5, this.y, 5, 1.5 * Math.PI, 0.5 * Math.PI);
-            crc2.closePath();
-            crc2.stroke();
             crc2.fill();
-            crc2.beginPath();
-            crc2.strokeStyle = this.color;
-            crc2.fillStyle = this.color;
-            crc2.arc(this.x - 8, this.y - 5, 4, 0 * Math.PI, 2 * Math.PI);
             crc2.closePath();
-            crc2.stroke();
-            crc2.fill();
+            //Streifen
             crc2.beginPath();
+            crc2.moveTo(this.x + 0.25, this.y + this.size / 2);
+            crc2.lineTo(this.x, this.y - this.size / 2);
             crc2.strokeStyle = "black";
-            crc2.fillStyle = "black";
-            crc2.moveTo(this.x - 7, this.y - 8);
-            crc2.lineTo(this.x - 5, this.y - 12);
-            crc2.moveTo(this.x - 9, this.y - 8);
-            crc2.lineTo(this.x - 11, this.y - 12);
-            crc2.closePath();
             crc2.stroke();
-            crc2.fill();
+            crc2.closePath();
+            crc2.beginPath();
+            crc2.moveTo(this.x + 2.25, this.y + this.size / 2);
+            crc2.lineTo(this.x + 2.25, this.y - this.size / 2);
+            crc2.strokeStyle = "black";
+            crc2.stroke();
         }
 
         move(): void {
@@ -85,6 +89,16 @@ namespace L7_Classes {
                 this.y = 0;
             }
 
+        }
+
+        setRandomPosition(): void {
+            this.x = Math.random() * 200;
+            this.y = Math.random() * 200;
+        }
+
+        setRandomStyle(): void {
+            this.size = Math.random() * 30 + 10;
+            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
         }
 
     }
