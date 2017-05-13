@@ -2,10 +2,11 @@
 Aufgabe: 7
 Name: Jana Burger
 Matrikel: 255076
-Datum: 7.5.17
+Datum: 13.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
-Er wurde nicht kopiert und auch nicht diktiert.*/
+Er wurde nicht kopiert und auch nicht diktiert.
+Ein Teil der Aufgabe wurde mit Jacqueline und Selina erstellt.*/
 
 namespace Classes {
 
@@ -17,7 +18,6 @@ namespace Classes {
         color: string;
 
         constructor(_x: number, _y: number, _color: string, _size: number) {
-            console.log("Hey, I'm Bob!");
             this.setRandomPosition();
             this.x = _x;
             this.y = _y;
@@ -32,16 +32,16 @@ namespace Classes {
 
         draw(): void {
             //Flügel
+//            crc2.beginPath();
+//            crc2.moveTo(this.x + 3, this.y - this.size / 2 - 3 - 3 / 2);
+//            crc2.bezierCurveTo(this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3, this.y - 3 + 3 / 2);
+//            crc2.bezierCurveTo(this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3, this.y - 3 - 5 / 2);
+//            crc2.fillStyle = "rgba(255,255,255, 0.8)";
+//            crc2.fill();
+//            crc2.closePath();
+            // Körper
             crc2.beginPath();
-            crc2.moveTo(this.x + 3, this.y - this.size / 2 - 3 - 3 / 2);
-            crc2.bezierCurveTo(this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3, this.y - 3 + 3 / 2);
-            crc2.bezierCurveTo(this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3, this.y - 3 - 5 / 2);
-            crc2.fillStyle = "rgba(255,255,255, 0.8)";
-            crc2.fill();
-            crc2.closePath();
-            //Körper der Biene
-            crc2.beginPath();
-            crc2.moveTo(this.x, this.y - this.size / 2);
+            crc2.moveTo(this.x, this.y - this.size / 3);
             crc2.bezierCurveTo(this.x + this.size, this.y - this.size / 2, this.x + this.size / 2, this.y + this.size / 2, this.x, this.y + this.size / 2);
             crc2.bezierCurveTo(this.x - this.size, this.y + this.size / 2, this.x - this.size / 2, this.y - this.size / 2, this.x, this.y - this.size / 2);
             crc2.fillStyle = this.color;
@@ -83,9 +83,9 @@ namespace Classes {
                 this.x = 400;
             }
             if (this.y < 0) {
-                this.y = 300;
+                this.y = 250;
             }
-            if (this.y > 300) {
+            if (this.y > 250) {
                 this.y = 0;
             }
 
@@ -108,15 +108,11 @@ namespace Classes {
     export class Flowers {
         x: number;
         y: number;
-        size: number;
-        color: string;
-        pointColor: string;
-        flowerType: number;
+        flowerType: string;
 
-        constructor(_x: number, _y: number, _size: number, _flowerType: number) {
+        constructor(_x: number, _y: number, _flowerType: string) {
             this.x = _x;
             this.y = _y;
-            this.size = _size;
             this.flowerType = _flowerType;
         }
 
@@ -206,7 +202,7 @@ namespace Classes {
 
         }
 
-        blume(_x: number, _y: number, _size: number): void {
+        blume(_x: number, _y: number): void {
             crc2.beginPath();
             //Stiel
             crc2.strokeStyle = "darkgreen";
@@ -263,12 +259,14 @@ namespace Classes {
 
         draw(): void {
             switch (this.flowerType) {
-                case 1:
-                    this.blume(this.x - 25, this.y - 6, 5);
+                case "tulpe":
+                    this.tulpe(this.x - 25, this.y - 6);
                     break;
-                case 2:
-                    this.tulpe(this.x + 40, this.y - 5);
+                case "margerite":
+                    this.margerite(this.x + 40, this.y - 5);
                     break;
+                case "blume":
+                    this.blume(this.x - 30, this.y - 4);
             }
 
         }

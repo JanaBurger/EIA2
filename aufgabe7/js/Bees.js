@@ -2,16 +2,16 @@
 Aufgabe: 7
 Name: Jana Burger
 Matrikel: 255076
-Datum: 7.5.17
+Datum: 13.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-Er wurde nicht kopiert und auch nicht diktiert.*/
+Er wurde nicht kopiert und auch nicht diktiert.
+Ein Teil der Aufgabe wurde mit Jacqueline und Selina erstellt.*/
 var Classes;
 (function (Classes) {
     //Klasse Bienen
     class Bee {
         constructor(_x, _y, _color, _size) {
-            console.log("Hey, I'm Bob!");
             this.setRandomPosition();
             this.x = _x;
             this.y = _y;
@@ -24,16 +24,16 @@ var Classes;
         }
         draw() {
             //Fl�gel
+            //            crc2.beginPath();
+            //            crc2.moveTo(this.x + 3, this.y - this.size / 2 - 3 - 3 / 2);
+            //            crc2.bezierCurveTo(this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3, this.y - 3 + 3 / 2);
+            //            crc2.bezierCurveTo(this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3, this.y - 3 - 5 / 2);
+            //            crc2.fillStyle = "rgba(255,255,255, 0.8)";
+            //            crc2.fill();
+            //            crc2.closePath();
+            // K�rper
             Classes.crc2.beginPath();
-            Classes.crc2.moveTo(this.x + 3, this.y - this.size / 2 - 3 - 3 / 2);
-            Classes.crc2.bezierCurveTo(this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3 + 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3, this.y - 3 + 3 / 2);
-            Classes.crc2.bezierCurveTo(this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 + 3 / 2, this.x + 3 - 10 / 2, this.y - this.size / 2 - 3 - 3 / 2, this.x + 3, this.y - 3 - 5 / 2);
-            Classes.crc2.fillStyle = "rgba(255,255,255, 0.8)";
-            Classes.crc2.fill();
-            Classes.crc2.closePath();
-            //K�rper der Biene
-            Classes.crc2.beginPath();
-            Classes.crc2.moveTo(this.x, this.y - this.size / 2);
+            Classes.crc2.moveTo(this.x, this.y - this.size / 3);
             Classes.crc2.bezierCurveTo(this.x + this.size, this.y - this.size / 2, this.x + this.size / 2, this.y + this.size / 2, this.x, this.y + this.size / 2);
             Classes.crc2.bezierCurveTo(this.x - this.size, this.y + this.size / 2, this.x - this.size / 2, this.y - this.size / 2, this.x, this.y - this.size / 2);
             Classes.crc2.fillStyle = this.color;
@@ -73,9 +73,9 @@ var Classes;
                 this.x = 400;
             }
             if (this.y < 0) {
-                this.y = 300;
+                this.y = 250;
             }
-            if (this.y > 300) {
+            if (this.y > 250) {
                 this.y = 0;
             }
         }
@@ -91,10 +91,9 @@ var Classes;
     Classes.Bee = Bee;
     //Klasse Blumen
     class Flowers {
-        constructor(_x, _y, _size, _flowerType) {
+        constructor(_x, _y, _flowerType) {
             this.x = _x;
             this.y = _y;
-            this.size = _size;
             this.flowerType = _flowerType;
         }
         tulpe(_x, _y) {
@@ -177,7 +176,7 @@ var Classes;
             Classes.crc2.stroke();
             Classes.crc2.fill();
         }
-        blume(_x, _y, _size) {
+        blume(_x, _y) {
             Classes.crc2.beginPath();
             //Stiel
             Classes.crc2.strokeStyle = "darkgreen";
@@ -231,12 +230,14 @@ var Classes;
         }
         draw() {
             switch (this.flowerType) {
-                case 1:
-                    this.blume(this.x - 25, this.y - 6, 5);
+                case "tulpe":
+                    this.tulpe(this.x - 25, this.y - 6);
                     break;
-                case 2:
-                    this.tulpe(this.x + 40, this.y - 5);
+                case "margerite":
+                    this.margerite(this.x + 40, this.y - 5);
                     break;
+                case "blume":
+                    this.blume(this.x - 30, this.y - 4);
             }
         }
         update() {

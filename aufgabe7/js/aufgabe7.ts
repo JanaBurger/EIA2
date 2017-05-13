@@ -2,11 +2,11 @@
 Aufgabe: 7
 Name: Jana Burger
 Matrikel: 255076
-Datum: 7.5.17
+Datum: 13.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.
-Aufgabe wurde mit Selina und Jacqueline erstellt*/
+Ein Teil der Aufgabe wurde mit Selina und Jacqueline erstellt*/
 
 namespace Classes {
 
@@ -19,17 +19,18 @@ namespace Classes {
     let tulpe: Flowers;
     let margerite: Flowers;
     let blume: Flowers;
-    let flowers: Flowers[] = [tulpe, margerite, blume];
+    let flowers: Flowers[] = [];
+    console.log(flowers);
 
     window.addEventListener("load", init);
 
     let imgData: ImageData;
 
     function init(_event: Event): void {
-        
+
         let x: number;
         let y: number;
-        
+
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         console.log(canvas);
@@ -63,21 +64,28 @@ namespace Classes {
             let _x: number = (Math.random() * (280 - 0)) + 0;
             let _y: number = (Math.random() * (250 - 130)) + 130;
 
-            let f: Flowers = new Flowers(0, 0, 0, 0);
+            let f: Flowers = new Flowers(0, 0, "");
 
             f.tulpe(_x - 25, _y - 6);
-            f.blume(_x - 10, _y + 5, 6);
-            f.blume(_x + 10, _y - 5, 4);
+            f.blume(_x - 10, _y + 5);
             f.margerite(_x + 40, _y - 5);
-            f.tulpe(370, 200);
+            f.tulpe(70, 225);
+            f.tulpe(250, 200);
+            f.tulpe(130, 170);
+            f.margerite(200, 220);
+            f.margerite(370, 180);
+            f.margerite(50, 160);
+
 
         }
+
+        console.log(flowers);
 
         //Bild wird gespeichert
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
         for (let i: number = 0; i < 10; i++) {
-            bees.push(new Bee(310, 150, "hsl(" + Math.random() * 180 + ", 80%, 50%)", Math.random() * 10 + 5));
+            bees.push(new Bee(325, 120, "yellow", Math.random() * 10 + 5));
         }
 
         window.setTimeout(animate, 30);
@@ -86,16 +94,14 @@ namespace Classes {
         canvas.addEventListener("click", weitereBiene);
         canvas.addEventListener("push", weitereBiene);
 
-        for (let i: number = 0; i < 5; i++) {
-            let z: number = Math.random() * (2 - 1 + 1) + 1;
-            if (z == 1 || 2) {
-                let f: Flowers = new Flowers(0, 0, 0, Math.random() * (2 - 1 + 1) + 1);
-                f.draw();
-            }
+        for (let i: number = 0; i < 4; i++) {
+
+            flowers.push(new Flowers((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
+            flowers.push(new Flowers((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
+            flowers.push(new Flowers((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
+            flowers.push(new Flowers((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
+            console.log(flowers);
         }
-
-        // window.setTimeout(animateFolwers, 0);
-
     }
 
     //Funktionen 
@@ -103,7 +109,7 @@ namespace Classes {
     //neue Biene wird erzeugt
     function weitereBiene(): void {
 
-        bees.push(new Bee(310, 150, "hsl(" + Math.random() * 180 + ", 80%, 50%)", Math.random() * 10 + 5));
+        bees.push(new Bee(325, 120, "hsl(" + Math.random() * 360 + ", 80%, 50%)", Math.random() * 10 + 5));
         n++;
     }
 
@@ -120,11 +126,11 @@ namespace Classes {
         window.setTimeout(animate, 30);
     }
 
-
+    //Hintergrund
     function drawKorb(_x: number, _y: number): void {
         crc2.beginPath();
-        crc2.strokeStyle = "lightbrown";
-        crc2.fillStyle = "lightbrown";
+        crc2.strokeStyle = "#CD853F";
+        crc2.fillStyle = "#CD853F";
         crc2.moveTo(_x, _y);
         crc2.lineTo(_x + 15, _y);
         crc2.arc(_x + 7.5, _y, 7.5, 1 * Math.PI, 0 * Math.PI);
