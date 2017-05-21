@@ -87,7 +87,7 @@ namespace Classes8 {
         canvas.addEventListener("click", weitereBiene);
         canvas.addEventListener("push", weitereBiene);
 
-        for (let i: number = 0; i < 7; i++) {
+        for (let i: number = 0; i < 5; i++) {
 
             var s: Honigbiene = new Honigbiene(325, 120, Math.random() * 10 + 5, "yellow");
             bees.push(s);

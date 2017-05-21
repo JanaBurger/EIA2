@@ -67,7 +67,7 @@ var Classes8;
         //neue Biene wird erzeugt
         canvas.addEventListener("click", weitereBiene);
         canvas.addEventListener("push", weitereBiene);
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 5; i++) {
             var s = new Classes8.Honigbiene(325, 120, Math.random() * 10 + 5, "yellow");
             Classes8.bees.push(s);
             var b = new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "yellow");
