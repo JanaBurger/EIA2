@@ -86,17 +86,6 @@ namespace Classes8 {
             console.log(Honigbiene);
         }
 
-        //        for (let i: number = 0; i < 5; i++) {
-        //            bees.push(new Honigbiene(325, 120, Math.random() * 10 + 5, "blue", 3))   //        }
-        
-//        for (let i: number = 0; i < n; i++) {
-//            //bees fy to special flowers
-//            let s: Honigbiene = new Honigbiene(325, 120, 3, "yellow");
-//            bees.push(s);
-//            let n: DummeBiene = new DummeBiene(325, 120, 3, "yellow");
-//            bees.push(n);
-//        }
-
         console.log(bees);
 
         window.setTimeout(animate, 30);
