@@ -19,7 +19,7 @@ namespace Classes8 {
         }
 
         update(): void {
-            //this.draw();
+            this.draw();
         }
 
     }

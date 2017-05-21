@@ -7,6 +7,26 @@ var Classes8;
             this.setStartPosition();
             this.setRandomTargetPosition();
         }
+        //Koordinaten von zuf�lliger Blume aus array flowers
+        setRandomTargetPosition() {
+            let getRandomFlower = Math.round(Math.random() * (Classes8.flowers.length - 1));
+            this.xCoordinate = Classes8.flowers[getRandomFlower].x;
+            this.yCoordinate = Classes8.flowers[getRandomFlower].y;
+        }
+        setStartPosition() {
+            this.x = 325;
+            this.y = 120;
+        }
+        move() {
+            let xMove = this.xCoordinate - this.x;
+            let yMove = this.yCoordinate - this.y;
+            if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
+                this.setRandomTargetPosition();
+            else {
+                this.x += xMove * this.speed;
+                this.y += yMove * this.speed;
+            }
+        }
         draw() {
             // K�rper
             Classes8.crc2.beginPath();
@@ -42,26 +62,6 @@ var Classes8;
             Classes8.crc2.lineTo(this.x + 2.25, this.y - this.size / 2);
             Classes8.crc2.strokeStyle = "black";
             Classes8.crc2.stroke();
-        }
-        //Koordinaten von zuf�lliger Blume aus array flowers
-        setRandomTargetPosition() {
-            let getRandomFlower = Math.round(Math.random() * Classes8.flowers.length - 1);
-            this.xCoordinate = Classes8.flowers[getRandomFlower].x;
-            this.yCoordinate = Classes8.flowers[getRandomFlower].y;
-        }
-        setStartPosition() {
-            this.x = 325;
-            this.y = 120;
-        }
-        move() {
-            let xMove = this.xCoordinate - this.x;
-            let yMove = this.yCoordinate - this.y;
-            if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
-                this.setRandomTargetPosition();
-            else {
-                this.x += xMove * this.speed;
-                this.y += yMove * this.speed;
-            }
         }
     }
     Classes8.Honigbiene = Honigbiene;

@@ -13,6 +13,29 @@ namespace Classes8 {
 
         }
 
+        //Koordinaten von zufälliger Blume aus array flowers
+        setRandomTargetPosition(): void {
+            let getRandomFlower: number = Math.round(Math.random() * (flowers.length - 1));
+            this.xCoordinate = flowers[getRandomFlower].x;
+            this.yCoordinate = flowers[getRandomFlower].y;
+        }
+
+        setStartPosition(): void {
+            this.x = 325;
+            this.y = 120;
+        }
+
+        move(): void {
+            let xMove: number = this.xCoordinate - this.x;
+            let yMove: number = this.yCoordinate - this.y;
+            if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
+                this.setRandomTargetPosition();
+            else {
+                this.x += xMove * this.speed;
+                this.y += yMove * this.speed;
+            }
+        }
+
         draw(): void {
             // Körper
             crc2.beginPath();
@@ -50,28 +73,7 @@ namespace Classes8 {
             crc2.stroke();
         }
 
-        //Koordinaten von zufälliger Blume aus array flowers
-        setRandomTargetPosition(): void {
-            let getRandomFlower: number = Math.round(Math.random() * flowers.length - 1);
-            this.xCoordinate = flowers[getRandomFlower].x;
-            this.yCoordinate = flowers[getRandomFlower].y;
-        }
 
-        setStartPosition(): void {
-            this.x = 325;
-            this.y = 120;
-        }
-
-        move(): void {
-            let xMove: number = this.xCoordinate - this.x;
-            let yMove: number = this.yCoordinate - this.y;
-            if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
-                this.setRandomTargetPosition();
-            else {
-                this.x += xMove * this.speed;
-                this.y += yMove * this.speed;
-            }
-        }
 
 
     }

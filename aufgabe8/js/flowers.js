@@ -11,7 +11,7 @@ var Classes8;
             //Draw Function
         }
         update() {
-            //this.draw();
+            this.draw();
         }
     }
     Classes8.Blumen = Blumen;

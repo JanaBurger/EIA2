@@ -2,7 +2,7 @@
 Aufgabe: 8
 Name: Jana Burger
 Matrikel: 255076
-Datum: 13.5.17
+Datum: 21.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.*/
@@ -63,37 +63,31 @@ namespace Classes8 {
             let _x: number = (Math.random() * (280 - 0)) + 0;
             let _y: number = (Math.random() * (300 - 130)) + 130;
 
-            // let f: Blumen = new Blumen(0, 0, "");
-
-            let tulpe: Blumen = new Tulpe(_x, _y, "tulpe");
-            let blume3: Blumen = new Blume3(_x + 40, _y - 3, "blume");
-            let margerite: Blumen = new Margerite(_x, _y, "margerite");
+            let tulpe: Tulpe = new Tulpe(_x, _y, "tulpe");
+            let blume3: Blume3 = new Blume3(_x + 40, _y - 3, "blume");
+            let margerite: Margerite = new Margerite(_x, _y, "margerite");
 
             tulpe.draw();
             blume3.draw();
             margerite.draw();
-
+        }
+        
+        //Blumen werden im Array gespeichert
+        for (let i: number = 0; i < 3; i++) {
+            flowers.push(new Tulpe((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
+            flowers.push(new Margerite((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "margerite"));
+            flowers.push(new Blume3((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
+            console.log(flowers);
         }
 
         //Bild wird gespeichert
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
-
-        window.setTimeout(animate, 30);
-
         //neue Biene wird erzeugt
         canvas.addEventListener("click", weitereBiene);
         canvas.addEventListener("push", weitereBiene);
 
-        //Blumen werden im Array gespeichert
-        for (let i: number = 0; i < 3; i++) {
-            flowers.push(new Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
-            flowers.push(new Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "margerite"));
-            flowers.push(new Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
-            console.log(flowers);
-        }
-
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 7; i++) {
 
             var s: Honigbiene = new Honigbiene(325, 120, Math.random() * 10 + 5, "yellow");
             bees.push(s);
@@ -101,6 +95,7 @@ namespace Classes8 {
             var b: DummeBiene = new DummeBiene(325, 120, Math.random() * 10 + 5, "yellow");
             bees.push(b);
         }
+        window.setTimeout(animate, 30);
 
     }
     //Funktionen 
@@ -280,6 +275,6 @@ namespace Classes8 {
         crc2.fill();
     }
 
+
+
 }
-
-
