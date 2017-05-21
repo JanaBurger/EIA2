@@ -27,7 +27,7 @@ namespace Classes8 {
 
         move(): void {
             let xMove: number = this.xCoordinate - this.x;
-            let yMove: number = this.yCoordinate - this.y;
+            let yMove: number = this.yCoordinate - this.y - 30;
             if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
                 this.setRandomTargetPosition();
             else {

@@ -19,7 +19,7 @@ var Classes8;
         }
         move() {
             let xMove = this.xCoordinate - this.x;
-            let yMove = this.yCoordinate - this.y;
+            let yMove = this.yCoordinate - this.y - 30;
             if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
                 this.setRandomTargetPosition();
             else {
