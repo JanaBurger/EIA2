@@ -77,10 +77,12 @@ var Classes8;
             Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
             console.log(Classes8.flowers);
         }
-        for (let i = 0; i < Classes8.flowers.length, i++;) {
-            let getFlower = Classes8.flowers[Math.floor(Math.random() * Classes8.flowers.length)];
-            console.log(getFlower);
-        }
+        //        for (let i: number = 0; i < flowers.length, i++;) {
+        //            let getFlower: Blumen = flowers[Math.floor(Math.random() * flowers.length)];
+        //            console.log(getFlower);
+        //            //getCoordinates from flower
+        //            //Biene: move to flower
+        //        }
     }
     //Funktionen 
     //neue Biene wird erzeugt

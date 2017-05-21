@@ -104,12 +104,12 @@ namespace Classes8 {
         }
 
 
-        for (let i: number = 0; i < flowers.length, i++;) {
-            let getFlower: Blumen = flowers[Math.floor(Math.random() * flowers.length)];
-            console.log(getFlower);
-            //getCoordinates from flower
-            //Biene: move to flower
-        }
+//        for (let i: number = 0; i < flowers.length, i++;) {
+//            let getFlower: Blumen = flowers[Math.floor(Math.random() * flowers.length)];
+//            console.log(getFlower);
+//            //getCoordinates from flower
+//            //Biene: move to flower
+//        }
     }
 
 
