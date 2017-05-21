@@ -15,7 +15,6 @@ var Classes8;
     let tulpe;
     let margerite;
     let blume;
-    console.log(Classes8.flowers);
     window.addEventListener("load", init);
     let imgData;
     function init(_event) {
@@ -59,24 +58,22 @@ var Classes8;
         }
         //Bild wird gespeichert
         imgData = Classes8.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        console.log(Classes8.bees);
         window.setTimeout(animate, 30);
         //neue Biene wird erzeugt
         canvas.addEventListener("click", weitereBiene);
         canvas.addEventListener("push", weitereBiene);
-        //Bienen werden im Array gespeichert
-        for (let i = 0; i < 4; i++) {
+        //Blumen werden im Array gespeichert
+        for (let i = 0; i < 3; i++) {
             Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
-            Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
-            Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
+            Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "margerite"));
             Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
             console.log(Classes8.flowers);
         }
-        for (let i = 0; i < 10; i++) {
-            Classes8.bees.push(new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "yellow"));
-        }
         for (let i = 0; i < 5; i++) {
-            Classes8.bees.push(new Classes8.Honigbiene(325, 120, Math.random() * 10 + 5, "pink"));
+            var s = new Classes8.Honigbiene(325, 120, Math.random() * 10 + 5, "yellow");
+            Classes8.bees.push(s);
+            var b = new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "yellow");
+            Classes8.bees.push(b);
         }
     }
     //Funktionen 

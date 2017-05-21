@@ -62,14 +62,6 @@ var Classes8;
                 this.y = 0;
             }
         }
-        setRandomStyle() {
-            this.size = Math.random() * 30 + 10;
-            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        }
-        setRandomPosition() {
-            this.x = Math.random() * 200;
-            this.y = Math.random() * 200;
-        }
     }
     Classes8.DummeBiene = DummeBiene;
 })(Classes8 || (Classes8 = {}));

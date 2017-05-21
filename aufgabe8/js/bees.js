@@ -28,11 +28,13 @@ var Classes8;
             this.draw();
             this.move();
         }
-        setRandomPosition() {
-            //SetRandomPosition Funktion
-        }
         setRandomStyle() {
-            //setRandomStyle Fznktion
+            this.size = Math.random() * 30 + 10;
+            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        }
+        setRandomPosition() {
+            this.x = Math.random() * 200;
+            this.y = Math.random() * 200;
         }
     }
     Classes8.Bienen = Bienen;

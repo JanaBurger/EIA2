@@ -38,13 +38,15 @@ namespace Classes8 {
             this.move();
         }
 
-        setRandomPosition(): void {
-            //SetRandomPosition Funktion
+        setRandomStyle(): void {
+            this.size = Math.random() * 30 + 10;
+            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
         }
 
-        setRandomStyle(): void {
-            //setRandomStyle Fznktion
 
+        setRandomPosition(): void {
+            this.x = Math.random() * 200;
+            this.y = Math.random() * 200;
         }
 
 

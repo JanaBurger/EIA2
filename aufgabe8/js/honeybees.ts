@@ -52,9 +52,14 @@ namespace Classes8 {
 
         //Koordinaten von zufälliger Blume aus array flowers
         setRandomTargetPosition(): void {
-            let randomflower: number = Math.round(Math.random() * flowers.length - 1);
-            this.xCoordinate = flowers[randomflower].x;
-            this.yCoordinate = flowers[randomflower].y;
+            let getRandomFlower: number = Math.round(Math.random() * flowers.length - 1);
+            this.xCoordinate = flowers[getRandomFlower].x;
+            this.yCoordinate = flowers[getRandomFlower].y;
+        }
+
+        setStartPosition(): void {
+            this.x = 325;
+            this.y = 120;
         }
 
         move(): void {
@@ -66,25 +71,6 @@ namespace Classes8 {
                 this.x += xMove * this.speed;
                 this.y += yMove * this.speed;
             }
-        }
-
-
-
-        setStartPosition(): void {
-            this.x = 325;
-            this.y = 120;
-        }
-
-
-        setRandomStyle(): void {
-            this.size = Math.random() * 30 + 10;
-            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        }
-
-
-        setRandomPosition(): void {
-            this.x = Math.random() * 200;
-            this.y = Math.random() * 200;
         }
 
 

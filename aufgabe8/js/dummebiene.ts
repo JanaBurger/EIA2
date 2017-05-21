@@ -70,16 +70,5 @@ namespace Classes8 {
 
         }
 
-        setRandomStyle(): void {
-            this.size = Math.random() * 30 + 10;
-            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        }
-
-
-        setRandomPosition(): void {
-            this.x = Math.random() * 200;
-            this.y = Math.random() * 200;
-        }
-
     }
 }

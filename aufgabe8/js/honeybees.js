@@ -45,9 +45,13 @@ var Classes8;
         }
         //Koordinaten von zuf�lliger Blume aus array flowers
         setRandomTargetPosition() {
-            let randomflower = Math.round(Math.random() * Classes8.flowers.length - 1);
-            this.xCoordinate = Classes8.flowers[randomflower].x;
-            this.yCoordinate = Classes8.flowers[randomflower].y;
+            let getRandomFlower = Math.round(Math.random() * Classes8.flowers.length - 1);
+            this.xCoordinate = Classes8.flowers[getRandomFlower].x;
+            this.yCoordinate = Classes8.flowers[getRandomFlower].y;
+        }
+        setStartPosition() {
+            this.x = 325;
+            this.y = 120;
         }
         move() {
             let xMove = this.xCoordinate - this.x;
@@ -58,18 +62,6 @@ var Classes8;
                 this.x += xMove * this.speed;
                 this.y += yMove * this.speed;
             }
-        }
-        setStartPosition() {
-            this.x = 325;
-            this.y = 120;
-        }
-        setRandomStyle() {
-            this.size = Math.random() * 30 + 10;
-            this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        }
-        setRandomPosition() {
-            this.x = Math.random() * 200;
-            this.y = Math.random() * 200;
         }
     }
     Classes8.Honigbiene = Honigbiene;
