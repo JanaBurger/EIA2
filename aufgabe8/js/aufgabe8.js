@@ -5,7 +5,8 @@ Matrikel: 255076
 Datum: 21.5.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-Er wurde nicht kopiert und auch nicht diktiert.*/
+Er wurde nicht kopiert und auch nicht diktiert.
+Teile der Aufgabe in Zusammenarbeit mit Jacqueline und Selina erstellt*/
 var Classes8;
 (function (Classes8) {
     var canvas;
@@ -48,18 +49,15 @@ var Classes8;
             let randomFlower = Math.floor((Math.random() * 3) + 0);
             let _x = (Math.random() * (280 - 0)) + 0;
             let _y = (Math.random() * (300 - 130)) + 130;
-            let tulpe = new Classes8.Tulpe(_x, _y, "tulpe");
-            let blume3 = new Classes8.Blume3(_x + 40, _y - 3, "blume");
-            let margerite = new Classes8.Margerite(_x, _y, "margerite");
+            let tulpe = new Classes8.Tulpe(_x - 50, _y + 21, "tulpe");
+            Classes8.flowers.push(tulpe);
             tulpe.draw();
+            let blume3 = new Classes8.Blume3(_x + 40, _y + 7, "blume");
+            Classes8.flowers.push(blume3);
             blume3.draw();
+            let margerite = new Classes8.Margerite(_x, _y, "margerite");
+            Classes8.flowers.push(margerite);
             margerite.draw();
-        }
-        //Blumen werden im Array gespeichert
-        for (let i = 0; i < 3; i++) {
-            Classes8.flowers.push(new Classes8.Tulpe((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "tulpe"));
-            Classes8.flowers.push(new Classes8.Margerite((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "margerite"));
-            Classes8.flowers.push(new Classes8.Blume3((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
             console.log(Classes8.flowers);
         }
         //Bild wird gespeichert
