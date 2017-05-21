@@ -9,12 +9,12 @@ Er wurde nicht kopiert und auch nicht diktiert.*/
 var Classes8;
 (function (Classes8) {
     var canvas;
-    let n = 10;
-    let bees = [];
+    Classes8.n = 10;
+    Classes8.bees = [];
+    Classes8.flowers = [];
     let tulpe;
     let margerite;
     let blume;
-    Classes8.flowers = [];
     console.log(Classes8.flowers);
     window.addEventListener("load", init);
     let imgData;
@@ -59,12 +59,7 @@ var Classes8;
         }
         //Bild wird gespeichert
         imgData = Classes8.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < 10; i++) {
-            bees.push(new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "yellow"));
-            bees.push(new Classes8.Honigbiene(325, 120, Math.random() * 10 + 5, "yellow"));
-            console.log(Classes8.Honigbiene);
-        }
-        console.log(bees);
+        console.log(Classes8.bees);
         window.setTimeout(animate, 30);
         //neue Biene wird erzeugt
         canvas.addEventListener("click", weitereBiene);
@@ -77,26 +72,26 @@ var Classes8;
             Classes8.flowers.push(new Classes8.Blumen((Math.random() * (240 + 20)) + 0, (Math.random() * (240 - 130)) + 130, "blume"));
             console.log(Classes8.flowers);
         }
-        //        for (let i: number = 0; i < flowers.length, i++;) {
-        //            let getFlower: Blumen = flowers[Math.floor(Math.random() * flowers.length)];
-        //            console.log(getFlower);
-        //            //getCoordinates from flower
-        //            //Biene: move to flower
-        //        }
+        for (let i = 0; i < 10; i++) {
+            Classes8.bees.push(new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "yellow"));
+        }
+        for (let i = 0; i < 5; i++) {
+            Classes8.bees.push(new Classes8.Honigbiene(325, 120, Math.random() * 10 + 5, "pink"));
+        }
     }
     //Funktionen 
     //neue Biene wird erzeugt
     function weitereBiene() {
-        bees.push(new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
-        n++;
+        Classes8.bees.push(new Classes8.DummeBiene(325, 120, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
+        Classes8.n++;
     }
     //Animation
     function animate() {
         console.log("Animate called");
         Classes8.crc2.putImageData(imgData, 0, 0);
-        for (let i = 0; i < n; i++) {
-            let b = bees[i];
-            bees[i].update();
+        for (let i = 0; i < Classes8.n; i++) {
+            let b = Classes8.bees[i];
+            Classes8.bees[i].update();
         }
         window.setTimeout(animate, 30);
     }

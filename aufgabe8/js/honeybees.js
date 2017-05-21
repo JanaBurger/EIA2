@@ -43,6 +43,12 @@ var Classes8;
             Classes8.crc2.strokeStyle = "black";
             Classes8.crc2.stroke();
         }
+        //Koordinaten von zuf�lliger Blume aus array flowers
+        setRandomTargetPosition() {
+            let randomflower = Math.round(Math.random() * Classes8.flowers.length - 1);
+            this.xCoordinate = Classes8.flowers[randomflower].x;
+            this.yCoordinate = Classes8.flowers[randomflower].y;
+        }
         move() {
             let xMove = this.xCoordinate - this.x;
             let yMove = this.yCoordinate - this.y;
@@ -52,12 +58,6 @@ var Classes8;
                 this.x += xMove * this.speed;
                 this.y += yMove * this.speed;
             }
-        }
-        //Koordinaten von zuf�lliger Blume aus array flowers
-        setRandomTargetPosition() {
-            let randomflower = Math.round(Math.random() * (Classes8.flowers.length - 1));
-            this.xCoordinate = Classes8.flowers[randomflower].x;
-            this.yCoordinate = Classes8.flowers[randomflower].y;
         }
         setStartPosition() {
             this.x = 325;
