@@ -12,6 +12,7 @@ namespace Form {
     
     let bestellung: string[] = [];
     
+    
     let step: HTMLInputElement = document.createElement("input");            
     let div: HTMLDivElement = document.createElement("div");    
     
@@ -24,6 +25,7 @@ namespace Form {
             let step: HTMLInputElement = document.createElement("input");
             
             document.getElementById("fruchteis").appendChild(div);
+
             step.setAttribute("type", "number");
             step.setAttribute("value", "0");
             document.getElementById("fruchteis").appendChild(step);
@@ -54,9 +56,11 @@ namespace Form {
 
             let div: HTMLDivElement = document.createElement("div");
             let step: HTMLInputElement = document.createElement("input");
+            let label: HTMLLabelElement = document.createElement("label"); 
             
             document.getElementById("toppings").appendChild(div);
             step.setAttribute("type", "checkbox");
+            label.appendChild(step);
             
             step.className = "checkbox";
             

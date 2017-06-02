@@ -35,8 +35,10 @@ var Form;
         for (let i = 0; i < toppings.length; i++) {
             let div = document.createElement("div");
             let step = document.createElement("input");
+            let label = document.createElement("label");
             document.getElementById("toppings").appendChild(div);
             step.setAttribute("type", "checkbox");
+            label.appendChild(step);
             step.className = "checkbox";
             document.getElementById("toppings").appendChild(step);
             toppings.splice(toppings.length, 1);
