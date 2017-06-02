@@ -16,7 +16,7 @@ var Form;
         console.log("Changed " + target.name + " to " + target.value);
         //*/
         //*/ note: this == _event.currentTarget in an event-handler
-        if (this.id == "checkbox")
+        if (this.id == "fruchteis")
             console.log("Changed " + target.name + " to " + target.checked);
         //*/
         //*/

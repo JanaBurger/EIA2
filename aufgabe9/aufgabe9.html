@@ -4,97 +4,129 @@
 <head>
 <meta charset="utf-8" />
 <title>FormElements</title>
-<link rel="stylesheet" href="FormElements.css" type="text/css" media="screen"/>
-<script src="FormElements.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="aufgabe9.css" type="text/css"
+	media="screen" />
+<script src="js/aufgabe9.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/arrays.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-<!-- -->
-	<fieldset id="text">
-		<legend> Text-Input </legend>
-		Simple
-		<input type="text" name="Text" placeholder="type here" required/>
-		<hr/>
-		Password
-		<input type="password" name="Password" placeholder="type password here"/>
-		<hr/>
-		Pattern
-		<input type="text" name="Pattern" pattern="[0-9]{3}" placeholder="use RegEx"/>
-		<hr/>
-		Mail
-		<input type="email" name="Mail" placeholder="place @ between"/>
-		<hr/>
-		Url
-		<input type="url" name="Url" placeholder="start with http:"/>
-		<hr/>
-		Area
-		<textarea name="Area" cols="30" rows="3" placeholder="long text here"></textarea>
+	<h1 id="title">Dein Eis-Dealer</h1>
+	
+	<fieldset id="uebersicht">
+		<legend> Bestellübersicht </legend>
+		<label>Bestellung:</label>
+		<hr />
+		<label>Aktueller Preis:</label>
+		<hr />
+		<button id="button">Bestellung prüfen</button>
+		
 	</fieldset>
-<!-- -->
-	<fieldset id="radio">
-		<legend> Radiobutton Group </legend>
-		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
-		<label for="radio1">Radio Button 1</label>
-		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
-		<label for="radio2">Radio Button 2</label>
-		<input type="radio" name="Radiogroup" value="radio3" id="radio3"/>
-		<label for="radio3">Radio Button 3</label>
+
+	<fieldset id="darreichung">
+	<legend> Darreichungsform </legend>
+		<input type="checkbox" name="Waffel" value="dar1" id="dar1" />
+		<label for="dar1">Waffel</label> 
+		<input type="checkbox" name="Becher" value="dar1" id="dar1" />
+		<label for="dar1">Becher</label> 
 	</fieldset>
-<!-- -->
-	<fieldset id="checkbox">
-		<legend> Checkbox Group </legend>
-		<input type="checkbox" name="Checkbox1" value="check1" id="check1"/>
-		<label for="check1">Checkbox 1</label>
-		<input type="checkbox" name="Checkbox2" value="check2" id="check2"/>
-		<label for="check2">Checkbox 2</label>
-		<input type="checkbox" name="Checkbox3" value="check3" id="check3"/>
-		<label for="check3">Checkbox 3</label>
+
+	<fieldset id="fruchteis">
+		<legend> Fruchteis, Kugel je 1€</legend>
+	<!--  <label for="check1">Erdbeere</label> 
+	    <input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />	
+		<label for="check2">Mango</label> 
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check3">Himbeere</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check4">Maracuja</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check5">Banane</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check6">Apfel</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check7">Zitrone</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check8">Ananas</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />
+		<label for="check9">Melone</label>
+		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+		
 	</fieldset>
-<!-- -->
-	<fieldset id="select">
-		<legend> Selection &amp; Interaction </legend>
-		Slider
-		<input type="range" name="Slider" min="0" max="1" step="0.1" value="0"/>
-		<hr/>
-		Stepper
-		<input type="number" name="Stepper" step="0.1" min="-1" max="1" value="0"/>
-		<hr/>
-		Datalist
-		<input type="text" name="Datalist" list="options" placeholder="what to buy?"/>
-		<datalist id="options">
-			<option value="Butter"> </option>
-			<option value="Milk"> </option>
-			<option value="Flour"> </option>
-			<option value="Sugar"> </option>
-			<option value="Eggs"> </option>
-			<option value="Salt"> </option>
-			<option value="Bread"> </option>
-		</datalist>
-		<hr/>
-		Select Box
-		<select name="Select" id="select">
-			<optgroup label="OptGroup1"></optgroup>
-			<option value="option1">First Option</option>
-			<option value="option2" selected>Second Option</option>
-			<optgroup label="OptGroup2"></optgroup>
-			<option value="option3">Third Option</option>
-			<option value="option4">Fourth Option</option>
+	
+	<fieldset id="milcheis">
+		<legend> Milcheis, Kugel je 1€</legend>
+<!-- 		<label for="milch1">Schokolade</label>  -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" />	  -->
+<!-- 		<label for="milch2">Vanille</label>  -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+<!-- 		<label for="milch3">Haselnuss</label> -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+<!-- 		<label for="milch4">Walnuss</label> -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+<!-- 		<label for="milch5">Joghurt</label> -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+<!-- 		<label for="milch6">Straciatella</label> -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+<!-- 		<label for="milch7">Pistazie</label> -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+<!-- 		<label for="milch8">Nugat</label> -->
+<!-- 		<input type="number" name="Stepper" step="1" min="0"max="10" value="0" class="stepper" /> -->
+		
+	</fieldset>
+	
+	<fieldset id="toppings">
+		<legend> Toppings, je 50ct</legend>
+<!-- 		<input type="checkbox" name="Sahne" value="topp1" id="topp1" /> -->
+<!-- 		<label for="topp1">Sahne</label>  -->
+<!-- 		<input type="checkbox" name="Schokosauce" value="topp2" id="topp2" />  -->
+<!-- 		<label for="topp2">Schokosauce</label>  -->
+<!-- 		<input type="checkbox" name="Erdbeersauce" value="topp3" id="topp3" /> -->
+<!-- 		<label for="topp3">Erdbeersauce</label> -->
+<!-- 		<input type="checkbox" name="Schokostreusel" value="topp4" id="topp4" /> -->
+<!-- 		<label for="topp4">Schokostreusel</label> -->
+<!-- 		<input type="checkbox" name="Gummibärchen" value="topp5" id="topp5" /> -->
+<!-- 		<label for="topp5">Gummibärchen</label> -->
+<!-- 		<input type="checkbox" name="Smarties" value="topp6" id="topp6" /> -->
+<!-- 		<label for="topp6">Smarties</label> -->
+<!-- 		<input type="checkbox" name="kleine Cookies" value="topp7" id="topp7" /> -->
+<!-- 		<label for="topp7">kleine Cookies</label> -->
+<!-- 		<input type="checkbox" name="bunte Streusel" value="topp8" id="topp8" /> -->
+<!-- 		<label for="topp8">bunte Streusel</label> -->
+
+	</fieldset>
+	
+	<fieldset id="lieferung">
+		<legend> Lieferung </legend>
+		<input type="radio" name="Standard" value="radio1" id="radio1" /> 
+		<label for="radio1">Standard (3 Tage)</label> 
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2" /> 
+		<label for="radio2">Express (Ankunft morgen)</label> 
+		<input type="radio" name="Radiogroup" value="radio3"id="radio3" /> 
+		<label for="radio3">ins Ausland</label>
+	</fieldset>
+
+	<fieldset id="liefer">
+		<legend> Lieferadresse </legend>
+		Name <input type="text" name="Text" placeholder="Bitte eingeben" required />
+		<hr />
+		Vorname <input type="text" name="Text" placeholder="Bitte eingeben" />
+		<hr />
+		Straße/ Hausnummer <input type="text" name="Strasse" pattern="[0-9]{3}"
+			placeholder="Bitte eingeben" />
+			<input type="number" name="Nummer"
+			placeholder="Nr" />
+		<hr />
+		PLZ <input type="number" name="PLZ" placeholder="Bitte eingeben" />
+		Stadt <input id="stadt" type="text" name="Stadt" placeholder="Bitte eingeben" />
+		<hr />
+		Land
+		<select name="Land" id="land">
+			<option value="option1">Deutschland </option> 
+			<option value="option3">Frankreich </option> 
+			<option value="option2">Österreich </option>
+			<option value="option4">Schweiz</option>
 		</select>
-		<hr/>
-		Button
-		<button name="Button" type="button">Click me!</button>
 	</fieldset>
-<!-- -->
-	<fieldset id="output">
-		<legend> Output </legend>
-		Output
-		<output name="out">---	Here's a result</output>
-		<hr/>
-		Progress
-		<progress value="0" max="1"> </progress>
-		<hr/>
-		Meter
-		<meter value="0" min="-1" max="1"> </meter>
-	</fieldset>
-<!-- -->
+
 </body>
 </html>
