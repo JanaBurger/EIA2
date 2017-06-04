@@ -8,16 +8,16 @@ body{
 	border: 1px solid transparent;
 	margin: 1em;
 	background-color: #F5F5F5;
-	line-height: 1.5em;
+	line-height: 2em;
 }
-#toppings{
-	padding-left: 1.5em;
+.toppings{
+	margin-top: 0.7em;
+	margin-left: 1em;
 }
 
 .checkbox{
 	display: inline;
-	margin-top: -1.4em;
-	margin-left: -1.4em;
+	margin-left: 1em;
 }
 
 #title {
@@ -44,9 +44,9 @@ label::after {
 head {
 	display: none;
 }
-input:invalid {
+/*input:invalid {
 	background: #F0C060;
-}
+}*/
 input:valid {
 	background: white;
 }
@@ -90,7 +90,7 @@ svg, figure, option {
 }
 @media screen and (min-width:1024px){
 #uebersicht{
-	position: fixed;
+	position: absolute;
 	float: right;
 	margin-left: 55%;
 	margin-top: 0.5% !important;

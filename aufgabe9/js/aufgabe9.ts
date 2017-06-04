@@ -12,26 +12,14 @@ namespace Form {
     }
 
     function handleChange(_event: Event): void {
-        //console.log(_event);
-        //*/
-        let target: HTMLInputElement = <HTMLInputElement>_event.target;
-        console.log("Changed " + target.name + " to " + target.value);
-        //*/
-        //*/ note: this == _event.currentTarget in an event-handler
-        if (this.id == "fruchteis")
-            console.log("Changed " + target.name + " to " + target.checked);
-        //*/
-        //*/
-        if (target.name == "Slider") {
-            let progress: HTMLProgressElement = <HTMLProgressElement>document.getElementsByTagName("progress")[0];
-            progress.value = parseFloat(target.value);
+        console.log(_event);
+        let bestellung: HTMLElement = document.getElementById("bestellung");
+        bestellung.innerText = "";
+
+        for (let i: number = 0; i < fruchtInputs.length; i++) {
+            if (parseInt(fruchtInputs[i].value) > 0) {
+                bestellung.innerText += eissorten[i] + " " + (parseInt(fruchtInputs[i].value) * 1) + "€" + "\n";
+            }
         }
-        //*/
-        //*/
-        if (target.name == "Stepper") {
-            let progress: HTMLProgressElement = <HTMLProgressElement>document.getElementsByTagName("meter")[0];
-            progress.value = parseFloat(target.value);
-        }
-        //*/
     }
 }
