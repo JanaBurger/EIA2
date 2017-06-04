@@ -1,3 +1,12 @@
+/*
+Aufgabe: 9
+Name: Jana Burger
+Matrikel: 255076
+Datum: 4.6.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert. Teile der Aufgabe zusammen mit Jacqueline und Selina erstellt*/
+
 namespace Form {
 
     window.addEventListener("load", init);
@@ -138,32 +147,23 @@ namespace Form {
 
     function clickButton(_event: Event): void {
 
-        let proof: string[] = [];
-        let name: HTMLInputElement = <HTMLInputElement>document.getElementById("name");
-        let vorname: HTMLInputElement = <HTMLInputElement>document.getElementById("vorname");
-        let strasse: HTMLInputElement = <HTMLInputElement>document.getElementById("strasse");
-        let nr: HTMLInputElement = <HTMLInputElement>document.getElementById("nr");
-        let plz: HTMLInputElement = <HTMLInputElement>document.getElementById("plz");
-        let stadt: HTMLInputElement = <HTMLInputElement>document.getElementById("stadt");
-        let land: HTMLInputElement = <HTMLInputElement>document.getElementById("land");
+        let proof: HTMLInputElement[] = [];
+        for (let i: number = 0; i < 5; i++) {
+            let inputs: HTMLInputElement = <HTMLInputElement>document.getElementsByClassName("proof")[i];
+            proof.push(inputs);
+            console.log(inputs);
+        }
 
-        if (name.validity.valid != true)
-            proof.push("name");
-        if (vorname.validity.valid != true)
-            proof.push("vorname");
-        if (strasse.validity.valid != true)
-            proof.push("strasse");
-        if (nr.validity.valid != true)
-            proof.push("nr");
-        if (plz.validity.valid != true)
-            proof.push("plz");
-        if (stadt.validity.valid != true)
-            proof.push("stadt");
-        if (land.validity.valid != true)
-            proof.push("land");        
-        
-        else {
-            alert("Ihre Eingaben sind nicht vollstaendig.");
+        for (let i: number = 0; i < proof.length; i++) {
+            console.log(proof.length);
+            if (proof[i].validity.valid == false) {
+                alert("Die Eingabe ist nicht korrekt.");
+                location.reload();
+            }
+            else {
+                alert("Vielen Dank fuer Ihre Bestellung!");
+                location.reload();
+            }
         }
     }
 

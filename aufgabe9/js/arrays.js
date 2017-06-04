@@ -1,3 +1,11 @@
+/*
+Aufgabe: 9
+Name: Jana Burger
+Matrikel: 255076
+Datum: 4.6.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+Er wurde nicht kopiert und auch nicht diktiert. Teile der Aufgabe zusammen mit Jacqueline und Selina erstellt*/
 var Form;
 (function (Form) {
     window.addEventListener("load", init);
@@ -103,29 +111,21 @@ var Form;
     }
     function clickButton(_event) {
         let proof = [];
-        let name = document.getElementById("name");
-        let vorname = document.getElementById("vorname");
-        let strasse = document.getElementById("strasse");
-        let nr = document.getElementById("nr");
-        let plz = document.getElementById("plz");
-        let stadt = document.getElementById("stadt");
-        let land = document.getElementById("land");
-        if (name.validity.valid != true)
-            proof.push("name");
-        if (vorname.validity.valid != true)
-            proof.push("vorname");
-        if (strasse.validity.valid != true)
-            proof.push("strasse");
-        if (nr.validity.valid != true)
-            proof.push("nr");
-        if (plz.validity.valid != true)
-            proof.push("plz");
-        if (stadt.validity.valid != true)
-            proof.push("stadt");
-        if (land.validity.valid != true)
-            proof.push("land");
-        else {
-            alert("Ihre Eingaben sind nicht vollstaendig.");
+        for (let i = 0; i < 5; i++) {
+            let inputs = document.getElementsByClassName("proof")[i];
+            proof.push(inputs);
+            console.log(inputs);
+        }
+        for (let i = 0; i < proof.length; i++) {
+            console.log(proof.length);
+            if (proof[i].validity.valid == false) {
+                alert("Die Eingabe ist nicht korrekt.");
+                location.reload();
+            }
+            else {
+                alert("Vielen Dank fuer Ihre Bestellung!");
+                location.reload();
+            }
         }
     }
 })(Form || (Form = {}));
