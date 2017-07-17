@@ -50,7 +50,7 @@ var Classes8;
             Classes8.crc2.stroke();
         }
         move() {
-            this.x += Math.random() * 5 - 3;
+            this.x += Math.random() * 5 - 1;
             this.y += Math.random() * 4 - 2;
             if (this.x < 0) {
                 this.x = 400;

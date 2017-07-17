@@ -1,6 +1,6 @@
 namespace Final {
 
-    export class NormalAirplane extends Airplane {
+    export class StartingAirplane extends Airplane {
 
         constructor(_x: number, _y: number, _size: number, _color: string) {
             super(_x, _y, _size, _color);
@@ -63,8 +63,8 @@ namespace Final {
         }
 
         move(): void {
-            this.x += (Math.random() * (-1 + 1)) - 1.5;
-            this.y += (Math.random() * (-3 + 1)) + 1;
+            this.x += 30;
+            this.y += 0;
 
             if (this.x < 0) {
                 this.x = 650;

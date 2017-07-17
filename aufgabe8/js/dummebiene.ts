@@ -55,7 +55,7 @@ namespace Classes8 {
 
 
         move(): void {
-            this.x += Math.random() * 5 - 3;
+            this.x += Math.random() * 5 - 1;
             this.y += Math.random() * 4 - 2;
 
             if (this.x < 0) {

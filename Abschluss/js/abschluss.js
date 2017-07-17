@@ -3,11 +3,10 @@ var Final;
     var canvas;
     Final.airplanes = [];
     Final.trees = [];
+    let n = 5;
     window.addEventListener("load", init);
     let imgData;
     function init(_event) {
-        let x;
-        let y;
         canvas = document.getElementsByTagName("canvas")[0];
         Final.crc2 = canvas.getContext("2d");
         console.log(canvas);
@@ -46,12 +45,16 @@ var Final;
         for (var i = 0; i < 10; i++) {
             let randomTree = Math.floor((Math.random() * 1) + 0);
             let _x = (Math.random() * (500 - 240)) + 240;
-            let _y = (Math.random() * (380 - 360)) + 330;
+            let _y = (Math.random() * (350 - 350)) + 330;
             let laub = new Final.Laubbaum(_x + 30, _y - 5);
             laub.draw();
             let tanne = new Final.Tanne(_x, _y);
             tanne.draw();
         }
+        //Bild wird gespeichert
+        imgData = Final.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        canvas.addEventListener("click", startingAirplane);
+        canvas.addEventListener("push", startingAirplane);
         for (let i = 0; i < 5; i++) {
             let _x = (Math.random() * (canvas.width - 0)) + 0;
             let _y = (Math.random() * (360 - 0)) + 0;
@@ -59,17 +62,19 @@ var Final;
             a.draw();
             Final.airplanes.push(a);
             console.log(Final.airplanes);
+            window.setTimeout(animate, 30);
         }
-        //Bild wird gespeichert
-        imgData = Final.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        window.setTimeout(animate, 30);
+    }
+    function startingAirplane() {
+        Final.airplanes.push(new Final.StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
+        n++;
     }
     function animate() {
         console.log("Animate called");
         Final.crc2.putImageData(imgData, 0, 0);
-        for (let i = 0; i < 10; i++) {
-            let b = Final.airplanes[i];
-            b.update();
+        for (let i = 0; i < 5; i++) {
+            //let b: Airplane = airplanes[i];
+            Final.airplanes[i].update();
         }
         window.setTimeout(animate, 30);
     }

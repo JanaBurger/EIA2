@@ -1,6 +1,6 @@
 var Final;
 (function (Final) {
-    class NormalAirplane extends Final.Airplane {
+    class StartingAirplane extends Final.Airplane {
         constructor(_x, _y, _size, _color) {
             super(_x, _y, _size, _color);
             this.setRandomPosition();
@@ -59,8 +59,8 @@ var Final;
             //            crc2.rotate(45 * Math.PI / 180);
         }
         move() {
-            this.x += (Math.random() * (-1 + 1)) - 1.5;
-            this.y += (Math.random() * (-3 + 1)) + 1;
+            this.x += 30;
+            this.y += 0;
             if (this.x < 0) {
                 this.x = 650;
             }
@@ -75,6 +75,6 @@ var Final;
             }
         }
     }
-    Final.NormalAirplane = NormalAirplane;
+    Final.StartingAirplane = StartingAirplane;
 })(Final || (Final = {}));
-//# sourceMappingURL=NormalAirplanes.js.map
+//# sourceMappingURL=startingAirplane.js.map
