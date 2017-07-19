@@ -59,7 +59,7 @@ namespace Final {
 
         move(): void {
 
-                    this.x += (Math.random() * (-1 + 1)) - 1;
+                    this.x += (Math.random() * (-3 + 1)) - 1;
                     this.y += (Math.random() * (-3 + 1)) + 1;
 
                     if (this.x < 0) {

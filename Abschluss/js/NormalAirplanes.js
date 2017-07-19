@@ -54,7 +54,7 @@ var Final;
             //            crc2.rotate(45 * Math.PI / 180);
         }
         move() {
-            this.x += (Math.random() * (-1 + 1)) - 1;
+            this.x += (Math.random() * (-3 + 1)) - 1;
             this.y += (Math.random() * (-3 + 1)) + 1;
             if (this.x < 0) {
                 this.x = 650;

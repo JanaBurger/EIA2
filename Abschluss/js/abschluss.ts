@@ -87,7 +87,7 @@ namespace Final {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
             let _y: number = (Math.random() * (250 - 10)) + 10;
 
-            let a: StartingAirplane = new StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+            let a: NormalAirplane = new NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             airplanes.push(a);
             console.log(airplanes);
@@ -106,7 +106,7 @@ namespace Final {
         let _x: number = 512;
         let _y: number = 385;
 
-        let a: Airplane = new Airplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        let a: StartingAirplane = new StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
 
         airplanes.push(a);
 
