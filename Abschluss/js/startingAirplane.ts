@@ -1,9 +1,14 @@
 namespace Final {
 
     export class StartingAirplane extends Airplane {
+        xCoordinate: number;
+        yCoordinate: number;
+        speed: number;
 
         constructor(_x: number, _y: number, _size: number, _color: string) {
             super(_x, _y, _size, _color);
+            this.setTargetPosition();
+        
         }
 
         draw(): void {
@@ -53,14 +58,29 @@ namespace Final {
             crc2.arc(this.x + 36, this.y, 2, 0, 360);
             crc2.stroke();
             crc2.fill();
-            
-//            crc2.rotate(45 * Math.PI / 180);
+
+            //            crc2.rotate(45 * Math.PI / 180);
+
+        }
+
+        setTargetPosition(): void {
+            this.xCoordinate = 200;
+            this.yCoordinate = 385;
 
         }
 
         move(): void {
-            this.x += (Math.random() * (-1 + 1)) - 1;
-            this.y += (Math.random() * (-3 + 1)) + 1;
+                   
+            
+            //this.x += - 3;
+            //this.y += 0;
+            
+            
+            let xMove: number = this.xCoordinate - this.x;
+            let yMove: number = this.yCoordinate - this.y - 30;
+            if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
+            this.setTargetPosition();
+
 
             if (this.x < 0) {
                 this.x = 650;
@@ -68,23 +88,12 @@ namespace Final {
             if (this.x > 650) {
                 this.x = 0;
             }
-            if (this.y < 0) {
-                this.y = 400;
-            }
-            if (this.y > 400) {
-                this.y = 0;
-            }
-            
+
             console.log("move");
 
         }
         
-//        update(): void {
-//            this.draw();
-//            this.move();
-//            
-//            console.log("geht");
-//        }
+
 
     }
 

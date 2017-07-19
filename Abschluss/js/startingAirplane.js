@@ -3,6 +3,7 @@ var Final;
     class StartingAirplane extends Final.Airplane {
         constructor(_x, _y, _size, _color) {
             super(_x, _y, _size, _color);
+            this.setTargetPosition();
         }
         draw() {
             Final.crc2.beginPath();
@@ -53,20 +54,22 @@ var Final;
             Final.crc2.fill();
             //            crc2.rotate(45 * Math.PI / 180);
         }
+        setTargetPosition() {
+            this.xCoordinate = 200;
+            this.yCoordinate = 385;
+        }
         move() {
-            this.x += (Math.random() * (-1 + 1)) - 1;
-            this.y += (Math.random() * (-3 + 1)) + 1;
+            //this.x += - 3;
+            //this.y += 0;
+            let xMove = this.xCoordinate - this.x;
+            let yMove = this.yCoordinate - this.y - 30;
+            if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
+                this.setTargetPosition();
             if (this.x < 0) {
                 this.x = 650;
             }
             if (this.x > 650) {
                 this.x = 0;
-            }
-            if (this.y < 0) {
-                this.y = 400;
-            }
-            if (this.y > 400) {
-                this.y = 0;
             }
             console.log("move");
         }

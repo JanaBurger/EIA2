@@ -71,19 +71,19 @@ namespace Final {
             let tanne: Tanne = new Tanne(_x, _y);
             tanne.draw();
         }
-        
-        
+
+
 
         //Bild wird gespeichert
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        
-         //Aufruf Klick-Funktion
-        canvas.addEventListener("click", startingAirplane);
-        canvas.addEventListener("push", startingAirplane);  
-              
+
+        //Aufruf Klick-Funktion
+        document.getElementById("flughafen").addEventListener("click", startingAirplane);
+        document.getElementById("flughafen").addEventListener("push", startingAirplane);
+
 
         //Normale Flugzeuge fliegen
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 2; i++) {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
             let _y: number = (Math.random() * (250 - 10)) + 10;
 
@@ -95,7 +95,7 @@ namespace Final {
 
         }
         window.setTimeout(animate, 30);
-               
+
     }
 
     //Funktionen
@@ -103,37 +103,48 @@ namespace Final {
     //Flugzeug soll starten
     function startingAirplane(): void {
         console.log("startingCalled");
+        let _x: number = 512;
+        let _y: number = 385;
 
-        //        airplanes.push(new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
-        //        n++;
-        
-        let a: StartingAirplane = new StartingAirplane(512, 385, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-        a.update();
-        //n++;
-
-        //        for (let i: number = 0; i < 1; i++) {
-        //            //let b: Airplane = airplanes[i];
-        //            airplanes[i].update();
-        //        }
+        let a: StartingAirplane = new StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
 
         airplanes.push(a);
+                
+//        var winkel: number = 0;
+//        winkel += 3;
+//        var secTime: number = 0;
+//        var time: number = setInterval(function(): void {
+//            var maxSec: number = 2,
+//            if (secTime > maxSec) {
+//                _x = 200 + 100 * Math.cos(winkel / 180 * Math.PI);
+//                _y = 100 + 50 * Math.sin(winkel / 180 * Math.PI);
+//           }
+//            }
+        
+   
 
-    }
-
-    //Animation
-    function animate(): void {
-        console.log("Animate called");
-
-        crc2.putImageData(imgData, 0, 0);
-
-        for (let i: number = 0; i < 5; i++) {
-            //let b: Airplane = airplanes[i];
-            airplanes[i].update();
-            
+//                if (_x = 200) {
+//                    if (_y = 385) {
+//                        break;
+//                    }
+//                }
         }
-       
-        window.setTimeout(animate, 30);
-    }
+   
+
+                //Animation
+                function animate(): void {
+                    console.log("Animate called");
+
+                    crc2.putImageData(imgData, 0, 0);
+
+                    for (let i: number = 0; i < airplanes.length; i++) {
+                        //let b: Airplane = airplanes[i];
+                        airplanes[i].update();
+
+                    }
+
+                    window.setTimeout(animate, 30);
+                }
 
 
-}
+            }
