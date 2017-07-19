@@ -67,11 +67,11 @@ namespace Final {
 
 
             if (this.x >= 200) {
-                if (this.y >= 250) {
+     
                     this.x += - 2;
                     this.y += - 1;
                     this.speed = 0.03;
-                }
+                
             }
 
             else {

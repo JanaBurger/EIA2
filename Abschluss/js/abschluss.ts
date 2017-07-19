@@ -84,7 +84,7 @@ namespace Final {
 
 
         //Normale Flugzeuge fliegen
-        for (let i: number = 0; i < 2; i++) {
+        for (let i: number = 0; i < 5; i++) {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
             let _y: number = (Math.random() * (250 - 10)) + 10;
 

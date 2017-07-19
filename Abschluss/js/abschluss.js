@@ -60,7 +60,7 @@ var Final;
         document.getElementById("landebahn").addEventListener("click", landingAirplane);
         document.getElementById("landebahn").addEventListener("push", landingAirplane);
         //Normale Flugzeuge fliegen
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 5; i++) {
             let _x = (Math.random() * (canvas.width - 0)) + 0;
             let _y = (Math.random() * (250 - 10)) + 10;
             let a = new Final.NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
