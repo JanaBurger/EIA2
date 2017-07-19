@@ -8,11 +8,8 @@ namespace Final {
         constructor(_x: number, _y: number, _size: number, _color: string) {
             super(_x, _y, _size, _color);
             this.speed = 0.03;
-
         }
 
-        
-        
         draw(): void {
             crc2.beginPath();
             crc2.strokeStyle = "black";
@@ -68,19 +65,28 @@ namespace Final {
         move(): void {
 
 
-            if (this.x >= 480) {
-                if (this.y <= 385) {
+            if (this.x >= 475) {
+                if (this.y <= 390) {
                     this.x += - 2;
-                    this.y += 1;
+                    this.y += 3;
                     this.speed = 0.03;
                 }
-            }
 
+            }
             else {
-                this.x += (Math.random() * (-3 + 1)) - 1;
-                this.y += (Math.random() * (-3 + 1)) + 1;
+                this.x += -2;
+                this.y += 0;
                 this.speed = 0.03;
             }
+
+
+            if (this.x <= 200) {
+                this.x += 0;
+                this.y += 0;
+                this.speed = 0;
+            }
+
+
 
             console.log("move");
 
