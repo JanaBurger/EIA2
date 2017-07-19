@@ -8,7 +8,8 @@ namespace Final {
         constructor(_x: number, _y: number, _size: number, _color: string) {
             super(_x, _y, _size, _color);
             this.setTargetPosition();
-        
+            this.speed = 0.03;
+
         }
 
         draw(): void {
@@ -70,16 +71,32 @@ namespace Final {
         }
 
         move(): void {
-                   
+
+
+            this.x += - 1;
+            this.y += 0;
             
-            //this.x += - 3;
-            //this.y += 0;
-            
-            
+            if (this.x = 250) {
+                this.speed = 0.01;
+            }
+
+            if (this.y = 385) {
+                this.speed = 0.01;
+            }
+
+            if (this.x = 200) {
+                this.speed = 0;
+            }
+
+            if (this.y = 385) {
+                this.speed = 0;
+            }
+
+
             let xMove: number = this.xCoordinate - this.x;
             let yMove: number = this.yCoordinate - this.y - 30;
             if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
-            this.setTargetPosition();
+                this.setTargetPosition();
 
 
             if (this.x < 0) {
@@ -92,7 +109,6 @@ namespace Final {
             console.log("move");
 
         }
-        
 
 
     }

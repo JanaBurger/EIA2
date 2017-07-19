@@ -4,6 +4,7 @@ var Final;
         constructor(_x, _y, _size, _color) {
             super(_x, _y, _size, _color);
             this.setTargetPosition();
+            this.speed = 0.03;
         }
         draw() {
             Final.crc2.beginPath();
@@ -59,8 +60,20 @@ var Final;
             this.yCoordinate = 385;
         }
         move() {
-            //this.x += - 3;
-            //this.y += 0;
+            this.x += -1;
+            this.y += 0;
+            if (this.x = 250) {
+                this.speed = 0.01;
+            }
+            if (this.y = 385) {
+                this.speed = 0.01;
+            }
+            if (this.x = 200) {
+                this.speed = 0;
+            }
+            if (this.y = 385) {
+                this.speed = 0;
+            }
             let xMove = this.xCoordinate - this.x;
             let yMove = this.yCoordinate - this.y - 30;
             if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
