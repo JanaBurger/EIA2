@@ -17,12 +17,25 @@
 <title>Abschlussaufgabe Flugzeuge</title>
 </head>
 <body>
+
+<audio id="audio">
+<source src="landung.wav" type="audio/wav">
+
+</audio>
 	<span>
-	<button id="flughafen"></button>
-		<button id="landebahn"></button>
-		<canvas width="650" height="400"></canvas>
+		<button id="flughafen" onclick="playaudio()"type="button"></button>
 		
+		<button id="landebahn" onclick="playaudio()"type="button"></button>
+		<canvas width="650" height="400"></canvas>
+
 	</span>
+	
+	<script>
+		var x = document.getElementById("audio")
+		function playaudio() {
+			x.play();
+		}
+	</script>
 </body>
 
 </html>
