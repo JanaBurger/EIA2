@@ -85,7 +85,7 @@ namespace Final {
         //Normale Flugzeuge fliegen
         for (let i: number = 0; i < 5; i++) {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
-            let _y: number = (Math.random() * (250 - 10)) - 0;
+            let _y: number = (Math.random() * (250 - 10)) + 10;
 
             let a: NormalAirplane = new NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
@@ -107,7 +107,7 @@ namespace Final {
         //        airplanes.push(new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
         //        n++;
         
-        let a: StartingAirplane = new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        let a: StartingAirplane = new StartingAirplane(512, 385, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
         a.update();
         //n++;
 
