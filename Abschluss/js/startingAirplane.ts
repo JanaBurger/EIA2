@@ -53,6 +53,7 @@ namespace Final {
             crc2.arc(this.x + 36, this.y, 2, 0, 360);
             crc2.stroke();
             crc2.fill();
+            
 //            crc2.rotate(45 * Math.PI / 180);
 
         }
@@ -73,6 +74,8 @@ namespace Final {
             if (this.y > 400) {
                 this.y = 0;
             }
+            
+            console.log("move");
 
         }
         

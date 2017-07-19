@@ -78,7 +78,7 @@ var Final;
         a.draw();
         a.update();
         a.move();
-        n++;
+        //n++;
         //        for (let i: number = 0; i < 1; i++) {
         //            //let b: Airplane = airplanes[i];
         //            airplanes[i].update();

@@ -68,6 +68,7 @@ var Final;
             if (this.y > 400) {
                 this.y = 0;
             }
+            console.log("move");
         }
         update() {
             this.draw();

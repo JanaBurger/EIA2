@@ -71,13 +71,15 @@ namespace Final {
             let tanne: Tanne = new Tanne(_x, _y);
             tanne.draw();
         }
+        
+        
 
         //Bild wird gespeichert
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
-
-        //Aufruf Klick-Funktion
+        
+         //Aufruf Klick-Funktion
         canvas.addEventListener("click", startingAirplane);
-        canvas.addEventListener("push", startingAirplane);
+        canvas.addEventListener("push", startingAirplane);        
 
         //Normale Flugzeuge fliegen
         for (let i: number = 0; i < 5; i++) {
@@ -92,6 +94,7 @@ namespace Final {
 
         }
         window.setTimeout(animate, 30);
+               
     }
 
     //Funktionen
@@ -106,7 +109,7 @@ namespace Final {
         a.draw();
         a.update();
         a.move();
-        n++;
+        //n++;
 
         //        for (let i: number = 0; i < 1; i++) {
         //            //let b: Airplane = airplanes[i];
@@ -126,7 +129,9 @@ namespace Final {
         for (let i: number = 0; i < 5; i++) {
             //let b: Airplane = airplanes[i];
             airplanes[i].update();
+            
         }
+       
         window.setTimeout(animate, 30);
     }
 
