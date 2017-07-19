@@ -7,7 +7,6 @@ namespace Final {
 
         constructor(_x: number, _y: number, _size: number, _color: string) {
             super(_x, _y, _size, _color);
-            this.setTargetPosition();
             this.speed = 0.03;
 
         }
@@ -80,12 +79,6 @@ namespace Final {
                 this.y += 0;
                 this.speed = 0.03;
             }
-
-
-
-
-
-
 
             console.log("move");
 

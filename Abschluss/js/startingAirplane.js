@@ -3,7 +3,6 @@ var Final;
     class StartingAirplane extends Final.Airplane {
         constructor(_x, _y, _size, _color) {
             super(_x, _y, _size, _color);
-            this.setTargetPosition();
             this.speed = 0.03;
         }
         draw() {
@@ -53,11 +52,6 @@ var Final;
             Final.crc2.arc(this.x + 36, this.y, 2, 0, 360);
             Final.crc2.stroke();
             Final.crc2.fill();
-            //            crc2.rotate(45 * Math.PI / 180);
-        }
-        setTargetPosition() {
-            this.xCoordinate = 200;
-            this.yCoordinate = 385;
         }
         move() {
             if (this.x > 200) {
