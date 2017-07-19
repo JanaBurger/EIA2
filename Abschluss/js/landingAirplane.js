@@ -54,10 +54,10 @@ var Final;
             Final.crc2.fill();
         }
         move() {
-            if (this.x >= 200) {
-                if (this.y >= 250) {
+            if (this.x >= 480) {
+                if (this.y <= 385) {
                     this.x += -2;
-                    this.y += -1;
+                    this.y += 1;
                     this.speed = 0.03;
                 }
             }

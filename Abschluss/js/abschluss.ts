@@ -18,8 +18,6 @@ namespace Final {
         crc2 = canvas.getContext("2d");
         console.log(canvas);
 
-
-
         //Wiese
         crc2.fillStyle = "#228B22";
         crc2.fillRect(0, 0, canvas.width, canvas.height);
@@ -80,7 +78,7 @@ namespace Final {
         //Aufruf Klick-Funktion
         document.getElementById("flughafen").addEventListener("click", startingAirplane);
         document.getElementById("flughafen").addEventListener("push", startingAirplane);
-        
+
         document.getElementById("landebahn").addEventListener("click", landingAirplane);
         document.getElementById("landebahn").addEventListener("push", landingAirplane);
 
@@ -125,21 +123,21 @@ namespace Final {
 
         airplanes.push(a);
 
-}
-        //Animation
-        function animate(): void {
-            console.log("Animate called");
+    }
+    //Animation
+    function animate(): void {
+        console.log("Animate called");
 
-            crc2.putImageData(imgData, 0, 0);
+        crc2.putImageData(imgData, 0, 0);
 
-            for (let i: number = 0; i < airplanes.length; i++) {
-                //let b: Airplane = airplanes[i];
-                airplanes[i].update();
+        for (let i: number = 0; i < airplanes.length; i++) {
+            //let b: Airplane = airplanes[i];
+            airplanes[i].update();
 
-            }
-
-            window.setTimeout(animate, 30);
         }
 
-
+        window.setTimeout(animate, 30);
     }
+
+
+}

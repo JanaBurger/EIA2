@@ -1,6 +1,6 @@
-namespace Final {    
+namespace Final {
 
-export class LandingAirplane extends Airplane {
+    export class LandingAirplane extends Airplane {
         xCoordinate: number;
         yCoordinate: number;
         speed: number;
@@ -11,6 +11,8 @@ export class LandingAirplane extends Airplane {
 
         }
 
+        
+        
         draw(): void {
             crc2.beginPath();
             crc2.strokeStyle = "black";
@@ -66,10 +68,10 @@ export class LandingAirplane extends Airplane {
         move(): void {
 
 
-            if (this.x >= 200) {
-                if (this.y >= 250) {
+            if (this.x >= 480) {
+                if (this.y <= 385) {
                     this.x += - 2;
-                    this.y += - 1;
+                    this.y += 1;
                     this.speed = 0.03;
                 }
             }
