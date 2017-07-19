@@ -57,6 +57,8 @@ var Final;
         //Aufruf Klick-Funktion
         document.getElementById("flughafen").addEventListener("click", startingAirplane);
         document.getElementById("flughafen").addEventListener("push", startingAirplane);
+        document.getElementById("landebahn").addEventListener("click", landingAirplane);
+        document.getElementById("landebahn").addEventListener("push", landingAirplane);
         //Normale Flugzeuge fliegen
         for (let i = 0; i < 2; i++) {
             let _x = (Math.random() * (canvas.width - 0)) + 0;
@@ -75,6 +77,13 @@ var Final;
         let _x = 512;
         let _y = 385;
         let a = new Final.StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        Final.airplanes.push(a);
+    }
+    //Flugzeug soll landen
+    function landingAirplane() {
+        let _x = 660;
+        let _y = 100;
+        let a = new Final.LandingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
         Final.airplanes.push(a);
     }
     //Animation

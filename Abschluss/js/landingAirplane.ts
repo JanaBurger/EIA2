@@ -1,6 +1,6 @@
-namespace Final {
+namespace Final {    
 
-    export class StartingAirplane extends Airplane {
+export class LandingAirplane extends Airplane {
         xCoordinate: number;
         yCoordinate: number;
         speed: number;

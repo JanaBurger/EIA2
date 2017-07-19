@@ -80,6 +80,9 @@ namespace Final {
         //Aufruf Klick-Funktion
         document.getElementById("flughafen").addEventListener("click", startingAirplane);
         document.getElementById("flughafen").addEventListener("push", startingAirplane);
+        
+        document.getElementById("landebahn").addEventListener("click", landingAirplane);
+        document.getElementById("landebahn").addEventListener("push", landingAirplane);
 
 
         //Normale Flugzeuge fliegen
@@ -113,21 +116,30 @@ namespace Final {
 
     }
 
+    //Flugzeug soll landen
+    function landingAirplane(): void {
+        let _x: number = 660;
+        let _y: number = 100;
 
-    //Animation
-    function animate(): void {
-        console.log("Animate called");
+        let a: LandingAirplane = new LandingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
 
-        crc2.putImageData(imgData, 0, 0);
-
-        for (let i: number = 0; i < airplanes.length; i++) {
-            //let b: Airplane = airplanes[i];
-            airplanes[i].update();
-
-        }
-
-        window.setTimeout(animate, 30);
-    }
-
+        airplanes.push(a);
 
 }
+        //Animation
+        function animate(): void {
+            console.log("Animate called");
+
+            crc2.putImageData(imgData, 0, 0);
+
+            for (let i: number = 0; i < airplanes.length; i++) {
+                //let b: Airplane = airplanes[i];
+                airplanes[i].update();
+
+            }
+
+            window.setTimeout(animate, 30);
+        }
+
+
+    }

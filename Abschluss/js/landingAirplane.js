@@ -1,6 +1,6 @@
 var Final;
 (function (Final) {
-    class StartingAirplane extends Final.Airplane {
+    class LandingAirplane extends Final.Airplane {
         constructor(_x, _y, _size, _color) {
             super(_x, _y, _size, _color);
             this.speed = 0.03;
@@ -75,6 +75,6 @@ var Final;
             }
         }
     }
-    Final.StartingAirplane = StartingAirplane;
+    Final.LandingAirplane = LandingAirplane;
 })(Final || (Final = {}));
-//# sourceMappingURL=startingAirplane.js.map
+//# sourceMappingURL=landingAirplane.js.map
