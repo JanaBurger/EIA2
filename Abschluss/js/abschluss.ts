@@ -59,7 +59,8 @@ namespace Final {
 
         }
 
-        for (var i: number = 0; i < 10; i++) {
+        //veränderlicher Wald
+        for (let i: number = 0; i < 10; i++) {
             let randomTree: number = Math.floor((Math.random() * 1) + 0);
             let _x: number = (Math.random() * (500 - 240)) + 240;
             let _y: number = (Math.random() * (350 - 350)) + 330;
@@ -74,29 +75,49 @@ namespace Final {
         //Bild wird gespeichert
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
+        //Aufruf Klick-Funktion
         canvas.addEventListener("click", startingAirplane);
         canvas.addEventListener("push", startingAirplane);
 
+        //Normale Flugzeuge fliegen
         for (let i: number = 0; i < 5; i++) {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
             let _y: number = (Math.random() * (360 - 0)) + 0;
 
-            var a: NormalAirplane = new NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+            let a: NormalAirplane = new NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             airplanes.push(a);
             console.log(airplanes);
 
-            window.setTimeout(animate, 30);
-        }
 
+        }
+        window.setTimeout(animate, 30);
     }
 
-    function startingAirplane(): void {
+    //Funktionen
 
-        airplanes.push(new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
+    //Flugzeug soll starten
+    function startingAirplane(): void {
+        console.log("startingCalled");
+
+        //        airplanes.push(new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
+        //        n++;
+        let a: StartingAirplane = new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        a.draw();
+        a.update();
+        a.move();
         n++;
 
+        //        for (let i: number = 0; i < 1; i++) {
+        //            //let b: Airplane = airplanes[i];
+        //            airplanes[i].update();
+        //        }
+
+        airplanes.push(a);
+
     }
+
+    //Animation
     function animate(): void {
         console.log("Animate called");
 

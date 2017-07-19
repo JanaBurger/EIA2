@@ -42,7 +42,8 @@ var Final;
             b.drawStreifen(500, 380);
             b.drawStreifen(530, 380);
         }
-        for (var i = 0; i < 10; i++) {
+        //ver�nderlicher Wald
+        for (let i = 0; i < 10; i++) {
             let randomTree = Math.floor((Math.random() * 1) + 0);
             let _x = (Math.random() * (500 - 240)) + 240;
             let _y = (Math.random() * (350 - 350)) + 330;
@@ -53,22 +54,38 @@ var Final;
         }
         //Bild wird gespeichert
         imgData = Final.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        //Aufruf Klick-Funktion
         canvas.addEventListener("click", startingAirplane);
         canvas.addEventListener("push", startingAirplane);
+        //Normale Flugzeuge fliegen
         for (let i = 0; i < 5; i++) {
             let _x = (Math.random() * (canvas.width - 0)) + 0;
             let _y = (Math.random() * (360 - 0)) + 0;
-            var a = new Final.NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+            let a = new Final.NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             Final.airplanes.push(a);
             console.log(Final.airplanes);
-            window.setTimeout(animate, 30);
         }
+        window.setTimeout(animate, 30);
     }
+    //Funktionen
+    //Flugzeug soll starten
     function startingAirplane() {
-        Final.airplanes.push(new Final.StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
+        console.log("startingCalled");
+        //        airplanes.push(new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
+        //        n++;
+        let a = new Final.StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        a.draw();
+        a.update();
+        a.move();
         n++;
+        //        for (let i: number = 0; i < 1; i++) {
+        //            //let b: Airplane = airplanes[i];
+        //            airplanes[i].update();
+        //        }
+        Final.airplanes.push(a);
     }
+    //Animation
     function animate() {
         console.log("Animate called");
         Final.crc2.putImageData(imgData, 0, 0);

@@ -3,11 +3,6 @@ var Final;
     class StartingAirplane extends Final.Airplane {
         constructor(_x, _y, _size, _color) {
             super(_x, _y, _size, _color);
-            this.setRandomPosition();
-            this.x = _x;
-            this.y = _y;
-            this.color = _color;
-            this.size = _size;
         }
         draw() {
             Final.crc2.beginPath();
@@ -59,8 +54,8 @@ var Final;
             //            crc2.rotate(45 * Math.PI / 180);
         }
         move() {
-            this.x += 30;
-            this.y += 0;
+            this.x += (Math.random() * (-1 + 1)) - 1;
+            this.y += (Math.random() * (-3 + 1)) + 1;
             if (this.x < 0) {
                 this.x = 650;
             }
@@ -73,6 +68,11 @@ var Final;
             if (this.y > 400) {
                 this.y = 0;
             }
+        }
+        update() {
+            this.draw();
+            this.move();
+            console.log("geht");
         }
     }
     Final.StartingAirplane = StartingAirplane;

@@ -4,11 +4,6 @@ namespace Final {
 
         constructor(_x: number, _y: number, _size: number, _color: string) {
             super(_x, _y, _size, _color);
-            this.setRandomPosition();
-            this.x = _x;
-            this.y = _y;
-            this.color = _color;
-            this.size = _size;
         }
 
         draw(): void {
@@ -63,8 +58,8 @@ namespace Final {
         }
 
         move(): void {
-            this.x += 30;
-            this.y += 0;
+            this.x += (Math.random() * (-1 + 1)) - 1;
+            this.y += (Math.random() * (-3 + 1)) + 1;
 
             if (this.x < 0) {
                 this.x = 650;
@@ -79,6 +74,13 @@ namespace Final {
                 this.y = 0;
             }
 
+        }
+        
+        update(): void {
+            this.draw();
+            this.move();
+            
+            console.log("geht");
         }
 
     }
