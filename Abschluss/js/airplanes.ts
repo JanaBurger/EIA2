@@ -15,13 +15,14 @@ namespace Final {
             this.size = _size;
         }
 
+        move(): void {
+            //Move Funktion
+        }
+
         draw(): void {
             //Draw Funktion
         }
 
-        move(): void {
-            //Move Funktion
-        }
 
         update(): void {
             this.draw();

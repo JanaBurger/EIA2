@@ -9,11 +9,11 @@ var Final;
             this.color = _color;
             this.size = _size;
         }
-        draw() {
-            //Draw Funktion
-        }
         move() {
             //Move Funktion
+        }
+        draw() {
+            //Draw Funktion
         }
         update() {
             this.draw();

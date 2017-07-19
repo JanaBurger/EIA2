@@ -62,12 +62,12 @@ var Final;
             if (this.x > 650) {
                 this.x = 0;
             }
-            if (this.y < 0) {
-                this.y = 400;
-            }
-            if (this.y > 400) {
-                this.y = 0;
-            }
+            // if (this.y < 0) {
+            //     this.y = 400;
+            // }
+            // if (this.y > 400) {
+            //     this.y = 0;
+            // }
         }
     }
     Final.NormalAirplane = NormalAirplane;

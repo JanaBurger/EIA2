@@ -70,11 +70,6 @@ var Final;
             }
             console.log("move");
         }
-        update() {
-            this.draw();
-            this.move();
-            console.log("geht");
-        }
     }
     Final.StartingAirplane = StartingAirplane;
 })(Final || (Final = {}));

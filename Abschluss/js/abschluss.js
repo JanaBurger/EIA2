@@ -60,7 +60,7 @@ var Final;
         //Normale Flugzeuge fliegen
         for (let i = 0; i < 5; i++) {
             let _x = (Math.random() * (canvas.width - 0)) + 0;
-            let _y = (Math.random() * (360 - 0)) + 0;
+            let _y = (Math.random() * (250 - 10)) - 0;
             let a = new Final.NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             Final.airplanes.push(a);
@@ -75,9 +75,7 @@ var Final;
         //        airplanes.push(new StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)"));
         //        n++;
         let a = new Final.StartingAirplane(550, 390, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-        a.draw();
         a.update();
-        a.move();
         //n++;
         //        for (let i: number = 0; i < 1; i++) {
         //            //let b: Airplane = airplanes[i];

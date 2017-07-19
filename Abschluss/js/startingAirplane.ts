@@ -79,12 +79,12 @@ namespace Final {
 
         }
         
-        update(): void {
-            this.draw();
-            this.move();
-            
-            console.log("geht");
-        }
+//        update(): void {
+//            this.draw();
+//            this.move();
+//            
+//            console.log("geht");
+//        }
 
     }
 
