@@ -64,30 +64,26 @@ namespace Final {
 
         }
 
-        setTargetPosition(): void {
-            this.xCoordinate = 200;
-            this.yCoordinate = 385;
 
-        }
 
         move(): void {
 
 
             this.x += - 1;
             this.y += 0;
-
-
-            if (this.x = 200) {
-                this.x += - 1;
-                this.y += 0;
-                this.speed = 0;
-            }
-
-            if (this.y = 385) {
-                this.x += - 1;
-                this.y += 0;
-                this.speed = 0;
-            }
+            //
+            //
+            //            if (this.x = 200) {
+            //                this.x += - 1;
+            //                this.y += 0;
+            //                this.speed = 0;
+            //            }
+            //
+            //            if (this.y = 385) {
+            //                this.x += - 1;
+            //                this.y += 0;
+            //                this.speed = 0;
+            //            }
 
 
             let xMove: number = this.xCoordinate - this.x;
@@ -104,6 +100,12 @@ namespace Final {
             }
 
             console.log("move");
+
+        }
+
+        setTargetPosition(): void {
+            this.xCoordinate = 200;
+            this.yCoordinate = 385;
 
         }
 

@@ -55,23 +55,22 @@ var Final;
             Final.crc2.fill();
             //            crc2.rotate(45 * Math.PI / 180);
         }
-        setTargetPosition() {
-            this.xCoordinate = 200;
-            this.yCoordinate = 385;
-        }
         move() {
             this.x += -1;
             this.y += 0;
-            if (this.x = 200) {
-                this.x += -1;
-                this.y += 0;
-                this.speed = 0;
-            }
-            if (this.y = 385) {
-                this.x += -1;
-                this.y += 0;
-                this.speed = 0;
-            }
+            //
+            //
+            //            if (this.x = 200) {
+            //                this.x += - 1;
+            //                this.y += 0;
+            //                this.speed = 0;
+            //            }
+            //
+            //            if (this.y = 385) {
+            //                this.x += - 1;
+            //                this.y += 0;
+            //                this.speed = 0;
+            //            }
             let xMove = this.xCoordinate - this.x;
             let yMove = this.yCoordinate - this.y - 30;
             if (Math.abs(xMove) < 0.5 && Math.abs(yMove) < 0.5)
@@ -83,6 +82,10 @@ var Final;
                 this.x = 0;
             }
             console.log("move");
+        }
+        setTargetPosition() {
+            this.xCoordinate = 200;
+            this.yCoordinate = 385;
         }
     }
     Final.StartingAirplane = StartingAirplane;

@@ -24,6 +24,7 @@ namespace Final {
         }
 
 
+
         update(): void {
             this.draw();
             this.move();

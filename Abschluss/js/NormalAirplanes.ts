@@ -53,28 +53,26 @@ namespace Final {
             crc2.arc(this.x + 36, this.y, 2, 0, 360);
             crc2.stroke();
             crc2.fill();
-//            crc2.rotate(45 * Math.PI / 180);
+            //            crc2.rotate(45 * Math.PI / 180);
 
         }
 
         move(): void {
-            this.x += (Math.random() * (-1 + 1)) - 1;
-            this.y += (Math.random() * (-3 + 1)) + 1;
 
-            if (this.x < 0) {
-                this.x = 650;
-            }
-            if (this.x > 650) {
-                this.x = 0;
-            }
-           // if (this.y < 0) {
-           //     this.y = 400;
-           // }
-           // if (this.y > 400) {
-           //     this.y = 0;
-           // }
+                    this.x += (Math.random() * (-1 + 1)) - 1;
+                    this.y += (Math.random() * (-3 + 1)) + 1;
 
-        }
+                    if (this.x < 0) {
+                        this.x = 650;
+                    }
+                    if (this.x > 650) {
+                        this.x = 0;
+                    }
+
+
+
+            }
+
 
     }
 

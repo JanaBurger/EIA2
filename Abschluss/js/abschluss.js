@@ -61,7 +61,7 @@ var Final;
         for (let i = 0; i < 2; i++) {
             let _x = (Math.random() * (canvas.width - 0)) + 0;
             let _y = (Math.random() * (250 - 10)) + 10;
-            let a = new Final.NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+            let a = new Final.StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             Final.airplanes.push(a);
             console.log(Final.airplanes);
@@ -74,23 +74,8 @@ var Final;
         console.log("startingCalled");
         let _x = 512;
         let _y = 385;
-        let a = new Final.StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        let a = new Final.Airplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
         Final.airplanes.push(a);
-        //        var winkel: number = 0;
-        //        winkel += 3;
-        //        var secTime: number = 0;
-        //        var time: number = setInterval(function(): void {
-        //            var maxSec: number = 2,
-        //            if (secTime > maxSec) {
-        //                _x = 200 + 100 * Math.cos(winkel / 180 * Math.PI);
-        //                _y = 100 + 50 * Math.sin(winkel / 180 * Math.PI);
-        //           }
-        //            }
-        //                if (_x = 200) {
-        //                    if (_y = 385) {
-        //                        break;
-        //                    }
-        //                }
     }
     //Animation
     function animate() {

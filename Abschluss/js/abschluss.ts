@@ -87,7 +87,7 @@ namespace Final {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
             let _y: number = (Math.random() * (250 - 10)) + 10;
 
-            let a: NormalAirplane = new NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+            let a: StartingAirplane = new StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             airplanes.push(a);
             console.log(airplanes);
@@ -106,45 +106,28 @@ namespace Final {
         let _x: number = 512;
         let _y: number = 385;
 
-        let a: StartingAirplane = new StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        let a: Airplane = new Airplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
 
         airplanes.push(a);
-                
-//        var winkel: number = 0;
-//        winkel += 3;
-//        var secTime: number = 0;
-//        var time: number = setInterval(function(): void {
-//            var maxSec: number = 2,
-//            if (secTime > maxSec) {
-//                _x = 200 + 100 * Math.cos(winkel / 180 * Math.PI);
-//                _y = 100 + 50 * Math.sin(winkel / 180 * Math.PI);
-//           }
-//            }
-        
-   
 
-//                if (_x = 200) {
-//                    if (_y = 385) {
-//                        break;
-//                    }
-//                }
+
+    }
+
+
+    //Animation
+    function animate(): void {
+        console.log("Animate called");
+
+        crc2.putImageData(imgData, 0, 0);
+
+        for (let i: number = 0; i < airplanes.length; i++) {
+            //let b: Airplane = airplanes[i];
+            airplanes[i].update();
+
         }
-   
 
-                //Animation
-                function animate(): void {
-                    console.log("Animate called");
-
-                    crc2.putImageData(imgData, 0, 0);
-
-                    for (let i: number = 0; i < airplanes.length; i++) {
-                        //let b: Airplane = airplanes[i];
-                        airplanes[i].update();
-
-                    }
-
-                    window.setTimeout(animate, 30);
-                }
+        window.setTimeout(animate, 30);
+    }
 
 
-            }
+}
