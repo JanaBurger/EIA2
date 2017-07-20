@@ -1,13 +1,22 @@
+/*
+Aufgabe: Abschlussarbeit
+Name: Jana Burger
+Matrikel: 255076
+Datum: 20.7.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.*/
+
 namespace Final {
 
     export class LandingAirplane extends Airplane {
-        xCoordinate: number;
-        yCoordinate: number;
         speed: number;
+        state: string;
 
         constructor(_x: number, _y: number, _color: string) {
             super(_x, _y, _color);
             this.speed = 0.03;
+            this.state = "land";
         }
 
         draw(): void {
@@ -64,44 +73,38 @@ namespace Final {
 
         move(): void {
 
-
-            if (this.x >= 475 && this.x >= 200) {
-                if (this.y <= 390) {
+            switch (this.state) {
+                case "land":
                     this.x += - 2;
                     this.y += 3;
                     this.speed = 0.03;
-                }
+
+                    if (this.x <= 475) {
+                        this.state = "drive";
+                    }
+                    break;
+
+                case "drive":
+                    this.x += -2;
+                    this.y += 0;
+                    this.speed = 0.03;
+
+                    if (this.x <= 160) {
+                        this.state = "stop";
+                    }
+                    break;
+
+                case "stop":
+                    this.x += 0;
+                    this.y += 0;
+                    this.speed = 0;
+
+                    break;
 
             }
-
-            else {
-                this.x += -2;
-                this.y += 0;
-                this.speed = 0.03;
-            }
-
-
-//            if (this.x <= 200) {
-//                this.x += 0;
-//                this.y += 0;
-//                this.speed = 0;
-//
-//            }
-
-
             console.log("move");
 
-            //            if (this.x < 0) {
-            //                this.x = 650;
-            //            }
-            //            if (this.x > 650) {
-            //                this.x = 0;
-            //            }
-
         }
-
-
-
 
     }
 

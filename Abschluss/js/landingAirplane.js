@@ -1,9 +1,18 @@
+/*
+Aufgabe: Abschlussarbeit
+Name: Jana Burger
+Matrikel: 255076
+Datum: 20.7.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+Er wurde nicht kopiert und auch nicht diktiert.*/
 var Final;
 (function (Final) {
     class LandingAirplane extends Final.Airplane {
         constructor(_x, _y, _color) {
             super(_x, _y, _color);
             this.speed = 0.03;
+            this.state = "land";
         }
         draw() {
             Final.crc2.beginPath();
@@ -54,31 +63,30 @@ var Final;
             Final.crc2.fill();
         }
         move() {
-            if (this.x >= 475 && this.x >= 200) {
-                if (this.y <= 390) {
+            switch (this.state) {
+                case "land":
                     this.x += -2;
                     this.y += 3;
                     this.speed = 0.03;
-                }
+                    if (this.x <= 475) {
+                        this.state = "drive";
+                    }
+                    break;
+                case "drive":
+                    this.x += -2;
+                    this.y += 0;
+                    this.speed = 0.03;
+                    if (this.x <= 160) {
+                        this.state = "stop";
+                    }
+                    break;
+                case "stop":
+                    this.x += 0;
+                    this.y += 0;
+                    this.speed = 0;
+                    break;
             }
-            else {
-                this.x += -2;
-                this.y += 0;
-                this.speed = 0.03;
-            }
-            //            if (this.x <= 200) {
-            //                this.x += 0;
-            //                this.y += 0;
-            //                this.speed = 0;
-            //
-            //            }
             console.log("move");
-            //            if (this.x < 0) {
-            //                this.x = 650;
-            //            }
-            //            if (this.x > 650) {
-            //                this.x = 0;
-            //            }
         }
     }
     Final.LandingAirplane = LandingAirplane;

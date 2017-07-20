@@ -1,3 +1,11 @@
+/*
+Aufgabe: Abschlussarbeit
+Name: Jana Burger
+Matrikel: 255076
+Datum: 20.7.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+Er wurde nicht kopiert und auch nicht diktiert.*/
 var Final;
 (function (Final) {
     class StartingAirplane extends Final.Airplane {
@@ -55,20 +63,6 @@ var Final;
             Final.crc2.fill();
         }
         move() {
-            //            if (this.x >= 200) {
-            //
-            //                this.x += - 2;
-            //                this.y += - 1;
-            //                this.speed = 0.03;
-            //
-            //            }
-            //
-            //            else {
-            //                this.x += (Math.random() * (-3 + 1)) - 1;
-            //                this.y += (Math.random() * (-3 + 1)) + 1;
-            //                this.speed = 0.03;
-            //            }
-            //
             switch (this.state) {
                 case "start":
                     this.x += -2;

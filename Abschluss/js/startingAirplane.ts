@@ -1,8 +1,16 @@
+/*
+Aufgabe: Abschlussarbeit
+Name: Jana Burger
+Matrikel: 255076
+Datum: 20.7.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.*/
+
 namespace Final {
 
     export class StartingAirplane extends Airplane {
-        xCoordinate: number;
-        yCoordinate: number;
+
         speed: number;
         state: string;
 
@@ -66,23 +74,6 @@ namespace Final {
 
 
         move(): void {
-
-            //            if (this.x >= 200) {
-            //
-            //                this.x += - 2;
-            //                this.y += - 1;
-            //                this.speed = 0.03;
-            //
-            //            }
-            //
-            //            else {
-            //                this.x += (Math.random() * (-3 + 1)) - 1;
-            //                this.y += (Math.random() * (-3 + 1)) + 1;
-            //                this.speed = 0.03;
-            //            }
-            //
-
-
 
             switch (this.state) {
                 case "start":

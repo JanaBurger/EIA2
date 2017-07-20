@@ -1,3 +1,11 @@
+/*
+Aufgabe: Abschlussarbeit
+Name: Jana Burger
+Matrikel: 255076
+Datum: 20.7.17
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+Er wurde nicht kopiert und auch nicht diktiert.*/
 var Final;
 (function (Final) {
     var canvas;
@@ -36,13 +44,6 @@ var Final;
             //Landebahn
             b.drawLandebahn(0, 0);
             //Streifen v. Landebahn
-            b.drawStreifen(20, 380);
-            b.drawStreifen(50, 380);
-            b.drawStreifen(80, 380);
-            b.drawStreifen(110, 380);
-            b.drawStreifen(140, 380);
-            b.drawStreifen(170, 380);
-            b.drawStreifen(200, 380);
             b.drawStreifen(230, 380);
             b.drawStreifen(260, 380);
             b.drawStreifen(290, 380);
