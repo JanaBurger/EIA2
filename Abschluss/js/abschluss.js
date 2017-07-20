@@ -91,10 +91,7 @@ var Final;
         let _y = 385;
         let a = new Final.StartingAirplane(_x, _y, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
         Final.airplanes.push(a);
-        if (_x <= 0) {
-            let b = new Final.NormalAirplane(660, 300, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-            Final.airplanes.push(b);
-        }
+        a.move();
     }
     //Flugzeug soll landen
     function landingAirplane() {

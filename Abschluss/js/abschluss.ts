@@ -130,12 +130,7 @@ namespace Final {
 
         airplanes.push(a);
         
-        if (_x <= 0) {
-            let b: NormalAirplane = new NormalAirplane (660, 300, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-            
-            airplanes.push(b);
-            }
-        
+        a.move();
 
     }
     

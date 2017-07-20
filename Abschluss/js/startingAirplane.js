@@ -54,22 +54,42 @@ var Final;
             Final.crc2.fill();
         }
         move() {
-            if (this.x >= 200) {
-                this.x += -2;
-                this.y += -1;
-                this.speed = 0.03;
-            }
-            else {
-                this.x += (Math.random() * (-3 + 1)) - 1;
-                this.y += (Math.random() * (-3 + 1)) + 1;
-                this.speed = 0.03;
-            }
-            console.log("move");
-            if (this.x < 0) {
-                this.x = 650;
-            }
-            if (this.x > 650) {
-                this.x = 0;
+            //            if (this.x >= 200) {
+            //
+            //                this.x += - 2;
+            //                this.y += - 1;
+            //                this.speed = 0.03;
+            //
+            //            }
+            //
+            //            else {
+            //                this.x += (Math.random() * (-3 + 1)) - 1;
+            //                this.y += (Math.random() * (-3 + 1)) + 1;
+            //                this.speed = 0.03;
+            //            }
+            //
+            //            console.log(          //
+            //            if (this.x < 0) {
+            //                this.x = 650;
+            //            }
+            //            if (this.x > 650) {
+            //                this.x = 0;
+            //            }   
+            switch (this.state) {
+                case "start":
+                    if (this.x >= 200) {
+                        this.x += -2;
+                        this.y += -1;
+                        this.speed = 0.03;
+                    }
+                    else {
+                        this.state = "fly";
+                    }
+                    break;
+                case "fly":
+                    this.x += (Math.random() * (-3 + 1)) - 1;
+                    this.y += (Math.random() * (-3 + 1)) + 1;
+                    break;
             }
         }
     }
