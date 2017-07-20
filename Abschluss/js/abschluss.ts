@@ -124,6 +124,7 @@ namespace Final {
         airplanes.push(a);
 
     }
+    
     //Animation
     function animate(): void {
         console.log("Animate called");
