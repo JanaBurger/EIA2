@@ -29,19 +29,30 @@ namespace Final {
         for (let i: number = 0; i < 2; i++) {
 
             let b: Background = new Background(0, 0);
-
+            
+            //Wolken
             b.drawWolke(100, 20);
             b.drawWolke(469, 145);
             b.drawWolke(318, 102);
             b.drawWolke(43, 200);
+            
+            //Flughafen
             b.drawAirport(650, 400);
+            
+            //Fenster in Flughafen
             b.drawWindow(650, 400);
             b.drawWindow(650, 370);
             b.drawWindow(650, 340);
             b.drawWindow(650, 310);
             b.drawWindow(650, 280);
+            
+            //Turm von Flughafen
             b.drawTower(650, 400);
+            
+            //Landebahn
             b.drawLandebahn(0, 0);
+            
+            //Streifen v. Landebahn
             b.drawStreifen(20, 380);
             b.drawStreifen(50, 380);
             b.drawStreifen(80, 380);
@@ -60,7 +71,7 @@ namespace Final {
             b.drawStreifen(470, 380);
             b.drawStreifen(500, 380);
             b.drawStreifen(530, 380);
-            
+
 
 
         }
@@ -96,7 +107,7 @@ namespace Final {
             let _x: number = (Math.random() * (canvas.width - 0)) + 0;
             let _y: number = (Math.random() * (250 - 10)) + 10;
 
-            let a: NormalAirplane = new NormalAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+            let a: NormalAirplane = new NormalAirplane(_x, _y, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
             a.draw();
             airplanes.push(a);
             console.log(airplanes);
@@ -115,24 +126,23 @@ namespace Final {
         let _x: number = 512;
         let _y: number = 385;
 
-        let a: StartingAirplane = new StartingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-
-        airplanes.push(a);
-
-
-    }
-
-    //Flugzeug soll landen
-    function landingAirplane(): void {
-        let _x: number = 660;
-        let _y: number = 100;
-
-        let a: LandingAirplane = new LandingAirplane(_x, _y, Math.random() * 10 + 5, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+        let a: StartingAirplane = new StartingAirplane(_x, _y, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
 
         airplanes.push(a);
 
     }
     
+    //Flugzeug soll landen
+    function landingAirplane(): void {
+        let _x: number = 660;
+        let _y: number = 100;
+
+        let a: LandingAirplane = new LandingAirplane(_x, _y, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
+
+        airplanes.push(a);
+
+    }
+
     //Animation
     function animate(): void {
         console.log("Animate called");

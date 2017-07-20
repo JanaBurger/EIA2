@@ -1,8 +1,8 @@
 var Final;
 (function (Final) {
     class NormalAirplane extends Final.Airplane {
-        constructor(_x, _y, _size, _color) {
-            super(_x, _y, _size, _color);
+        constructor(_x, _y, _color) {
+            super(_x, _y, _color);
         }
         draw() {
             Final.crc2.beginPath();

@@ -1,8 +1,8 @@
 var Final;
 (function (Final) {
     class LandingAirplane extends Final.Airplane {
-        constructor(_x, _y, _size, _color) {
-            super(_x, _y, _size, _color);
+        constructor(_x, _y, _color) {
+            super(_x, _y, _color);
             this.speed = 0.03;
         }
         draw() {

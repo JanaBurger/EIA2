@@ -5,8 +5,8 @@ namespace Final {
         yCoordinate: number;
         speed: number;
 
-        constructor(_x: number, _y: number, _size: number, _color: string) {
-            super(_x, _y, _size, _color);
+        constructor(_x: number, _y: number, _color: string) {
+            super(_x, _y, _color);
             this.speed = 0.03;
 
         }
