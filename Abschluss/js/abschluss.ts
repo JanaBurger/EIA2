@@ -139,7 +139,7 @@ namespace Final {
         let _y: number = 100;
 
         let a: LandingAirplane = new LandingAirplane(_x, _y, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-
+       
         airplanes.push(a);
 
     }
