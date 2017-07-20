@@ -9,6 +9,7 @@ namespace Final {
         constructor(_x: number, _y: number, _color: string) {
             super(_x, _y, _color);
             this.speed = 0.03;
+            this.state = "start"; 
 
         }
 

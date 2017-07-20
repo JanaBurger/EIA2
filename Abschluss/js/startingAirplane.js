@@ -4,6 +4,7 @@ var Final;
         constructor(_x, _y, _color) {
             super(_x, _y, _color);
             this.speed = 0.03;
+            this.state = "start";
         }
         draw() {
             Final.crc2.beginPath();
