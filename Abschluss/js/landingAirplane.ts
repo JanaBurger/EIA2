@@ -65,7 +65,7 @@ namespace Final {
         move(): void {
 
 
-            if (this.x >= 475) {
+            if (this.x >= 475 && this.x >= 200) {
                 if (this.y <= 390) {
                     this.x += - 2;
                     this.y += 3;
@@ -73,6 +73,7 @@ namespace Final {
                 }
 
             }
+
             else {
                 this.x += -2;
                 this.y += 0;
@@ -80,22 +81,22 @@ namespace Final {
             }
 
 
-            if (this.x <= 200) {
-                this.x += 0;
-                this.y += 0;
-                this.speed = 0;
-            }
-
+//            if (this.x <= 200) {
+//                this.x += 0;
+//                this.y += 0;
+//                this.speed = 0;
+//
+//            }
 
 
             console.log("move");
 
-//            if (this.x < 0) {
-//                this.x = 650;
-//            }
-//            if (this.x > 650) {
-//                this.x = 0;
-//            }
+            //            if (this.x < 0) {
+            //                this.x = 650;
+            //            }
+            //            if (this.x > 650) {
+            //                this.x = 0;
+            //            }
 
         }
 

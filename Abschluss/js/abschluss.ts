@@ -42,6 +42,13 @@ namespace Final {
             b.drawWindow(650, 280);
             b.drawTower(650, 400);
             b.drawLandebahn(0, 0);
+            b.drawStreifen(20, 380);
+            b.drawStreifen(50, 380);
+            b.drawStreifen(80, 380);
+            b.drawStreifen(110, 380);
+            b.drawStreifen(140, 380);
+            b.drawStreifen(170, 380);
+            b.drawStreifen(200, 380);
             b.drawStreifen(230, 380);
             b.drawStreifen(260, 380);
             b.drawStreifen(290, 380);
@@ -53,6 +60,7 @@ namespace Final {
             b.drawStreifen(470, 380);
             b.drawStreifen(500, 380);
             b.drawStreifen(530, 380);
+            
 
 
         }

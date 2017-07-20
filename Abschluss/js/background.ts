@@ -100,13 +100,13 @@ namespace Final {
             crc2.beginPath();
             crc2.fillStyle = "#F4A460";
             crc2.strokeStyle = "#F4A460";
-            crc2.fillRect(_x + 200, _y + 360, 350, 40);
+            crc2.fillRect(_x, _y + 360, 550, 40);
             crc2.stroke();
             crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x + 180, _y + 380, 50, 0, 360);
-            crc2.stroke();
-            crc2.fill();
+//            crc2.beginPath();
+//            crc2.arc(_x + 180, _y + 380, 50, 0, 360);
+//            crc2.stroke();
+//            crc2.fill();
         }
         drawStreifen(_x: number, _y: number): void {
             crc2.beginPath();
