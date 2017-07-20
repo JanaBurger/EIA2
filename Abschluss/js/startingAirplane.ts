@@ -90,12 +90,11 @@ namespace Final {
                      
             switch (this.state) {
                 case "start":
-                    if (this.x >= 200) {
                         this.x += - 2;
                         this.y += - 1;
                         this.speed = 0.03;
-                        }
-                        else {
+                        
+                        if (this.x <= 200) {
                         this.state = "fly";
                             }
                         break;
