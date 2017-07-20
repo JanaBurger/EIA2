@@ -67,11 +67,11 @@ namespace Final {
 
 
             if (this.x >= 200) {
-     
-                    this.x += - 2;
-                    this.y += - 1;
-                    this.speed = 0.03;
-                
+
+                this.x += - 2;
+                this.y += - 1;
+                this.speed = 0.03;
+
             }
 
             else {
@@ -82,12 +82,12 @@ namespace Final {
 
             console.log("move");
 
-//            if (this.x < 0) {
-//                this.x = 650;
-//            }
-//            if (this.x > 650) {
-//                this.x = 0;
-//            }
+            if (this.x < 0) {
+                this.x = 650;
+            }
+            if (this.x > 650) {
+                this.x = 0;
+            }
 
         }
 
