@@ -89,6 +89,7 @@ var Final;
                     this.y += (Math.random() * (-3 + 1)) + 1;
                     break;
             }
+            console.log("move");
         }
     }
     Final.StartingAirplane = StartingAirplane;

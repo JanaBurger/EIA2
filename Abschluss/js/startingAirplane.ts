@@ -98,11 +98,14 @@ namespace Final {
                         this.state = "fly";
                             }
                         break;
+                    
                 case "fly":
                     this.x += (Math.random() * (-3 + 1)) - 1;
                     this.y += (Math.random() * (-3 + 1)) + 1;
                     break;
+                    
             }
+            console.log("move");
 
         }
 

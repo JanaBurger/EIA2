@@ -130,7 +130,6 @@ namespace Final {
 
         airplanes.push(a);
         
-        a.move();
 
     }
     
