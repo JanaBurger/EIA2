@@ -69,12 +69,6 @@ var Final;
             //            }
             //
             //            console.log(          //
-            //            if (this.x < 0) {
-            //                this.x = 650;
-            //            }
-            //            if (this.x > 650) {
-            //                this.x = 0;
-            //            }   
             switch (this.state) {
                 case "start":
                     this.x += -2;
@@ -90,6 +84,12 @@ var Final;
                     break;
             }
             console.log("move");
+            if (this.x < 0) {
+                this.x = 650;
+            }
+            if (this.x > 650) {
+                this.x = 0;
+            }
         }
     }
     Final.StartingAirplane = StartingAirplane;

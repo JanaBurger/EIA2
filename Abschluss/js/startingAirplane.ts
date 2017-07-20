@@ -81,31 +81,33 @@ namespace Final {
             //            }
             //
             //            console.log(          //
-            //            if (this.x < 0) {
-            //                this.x = 650;
-            //            }
-            //            if (this.x > 650) {
-            //                this.x = 0;
-            //            }   
-                     
+
+
             switch (this.state) {
                 case "start":
-                        this.x += - 2;
-                        this.y += - 1;
-                        this.speed = 0.03;
-                        
-                        if (this.x <= 200) {
+                    this.x += - 2;
+                    this.y += - 1;
+                    this.speed = 0.03;
+
+                    if (this.x <= 200) {
                         this.state = "fly";
-                            }
-                        break;
-                    
+                    }
+                    break;
+
                 case "fly":
                     this.x += (Math.random() * (-3 + 1)) - 1;
                     this.y += (Math.random() * (-3 + 1)) + 1;
                     break;
-                    
+
             }
             console.log("move");
+
+            if (this.x < 0) {
+                this.x = 650;
+            }
+            if (this.x > 650) {
+                this.x = 0;
+            }
 
         }
 
