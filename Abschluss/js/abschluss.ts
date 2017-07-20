@@ -127,7 +127,7 @@ namespace Final {
         let _y: number = 385;
 
         let a: StartingAirplane = new StartingAirplane(_x, _y, "hsl(" + Math.random() * 360 + ", 80%, 50%)");
-
+        
         airplanes.push(a);
         
 

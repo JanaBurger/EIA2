@@ -68,7 +68,6 @@ var Final;
             //                this.speed = 0.03;
             //            }
             //
-            //            console.log(          //
             switch (this.state) {
                 case "start":
                     this.x += -2;

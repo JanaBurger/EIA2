@@ -80,7 +80,7 @@ namespace Final {
             //                this.speed = 0.03;
             //            }
             //
-            //            console.log(          //
+
 
 
             switch (this.state) {
