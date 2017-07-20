@@ -82,12 +82,12 @@ namespace Final {
 
             console.log("move");
 
-            if (this.x < 0) {
-                this.x = 650;
-            }
-            if (this.x > 650) {
-                this.x = 0;
-            }
+//            if (this.x < 0) {
+//                this.x = 650;
+//            }
+//            if (this.x > 650) {
+//                this.x = 0;
+//            }
 
         }
 

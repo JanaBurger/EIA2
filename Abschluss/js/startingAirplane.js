@@ -65,12 +65,12 @@ var Final;
                 this.speed = 0.03;
             }
             console.log("move");
-            if (this.x < 0) {
-                this.x = 650;
-            }
-            if (this.x > 650) {
-                this.x = 0;
-            }
+            //            if (this.x < 0) {
+            //                this.x = 650;
+            //            }
+            //            if (this.x > 650) {
+            //                this.x = 0;
+            //            }
         }
     }
     Final.StartingAirplane = StartingAirplane;
